@@ -4,10 +4,10 @@ public class Book {
 
 	protected String title;
 	protected String author;
-	protected boolean status;
-	protected Date dueDate;
+	protected String status;
+	protected long dueDate;
 	
-	public Book(String title, String author, boolean status, Date dueDate) {
+	public Book(String title, String author, String status, long dueDate) {
 		super();
 		this.title = title;
 		this.author = author;
@@ -26,16 +26,16 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public boolean isStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(boolean status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
-	public Date getDueDate() {
+	public long getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(Date dueDate) {
+	public void setDueDate(long dueDate) {
 		this.dueDate = dueDate;
 	}
 	@Override

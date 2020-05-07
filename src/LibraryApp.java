@@ -37,7 +37,7 @@ public class LibraryApp {
 		lookUpByTitle(titleName);
 		System.out.println("Enter a book to check out.");
 		bookCheckOut(titleName);
-
+        bookReturn(titleName);
 	}
 
 	private static void listBooks() {
@@ -84,5 +84,27 @@ public class LibraryApp {
 			}
 
 		}
+		helper.rewrite(allBook);
+		listBooks();
+	}
+
+	private static void bookReturn(String titleName) {
+		List<Book> toAllBook = helper.readAll();
+
+		for (Book b : toAllBook) {
+			if (b.getTitle().equalsIgnoreCase(titleName)) {
+		        Book userChoice = b;
+				if (userChoice.getStatus().startsWith("f")) {
+					System.out.println("Thank you for returning" + userChoice.getTitle());
+					b.setStatus("true");
+
+				} else {
+					System.out.println("That book has been checked out.");
+				}
+			}
+
+		}
+		helper.rewrite(toAllBook);
+		listBooks();
 	}
 }

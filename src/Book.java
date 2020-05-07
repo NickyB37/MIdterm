@@ -1,18 +1,16 @@
-import java.util.Date;
+
 
 public class Book {
 
 	protected String title;
 	protected String author;
 	protected String status;
-	protected long dueDate;
 	
-	public Book(String title, String author, String status, long dueDate) {
+	public Book(String title, String author, String status) {
 		super();
 		this.title = title;
 		this.author = author;
 		this.status = status;
-		this.dueDate = dueDate;
 	}
 	public String getTitle() {
 		return title;
@@ -32,15 +30,10 @@ public class Book {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public long getDueDate() {
-		return dueDate;
-	}
-	public void setDueDate(long dueDate) {
-		this.dueDate = dueDate;
-	}
+
 	@Override
 	public String toString() {
-		return "Book [title=" + title + ", author=" + author + ", status=" + status + ", dueDate=" + dueDate + "]";
+		return "Book [title=" + title + ", author=" + author + ", status=" + status + ", dueDate= ]";
 	}
 	
 	

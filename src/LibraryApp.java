@@ -1,4 +1,4 @@
-import java.sql.Date;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,32 +10,33 @@ public class LibraryApp {
 	
 static {
 	
-	helper.append(new Book("A","a","true",1));
-	books.add(new Book("B","b","true",1));
-	books.add(new Book("C","c","true",1));
-	books.add(new Book("D","d","true",1));
-	books.add(new Book("E","e","true",1));
-	books.add(new Book("F","f","true",1));
-	books.add(new Book("E","g","true",1));
-	books.add(new Book("F","h","true",1));
-	books.add(new Book("G","i","true",1));
-	books.add(new Book("H","j","true",1));
-	books.add(new Book("I","k","true",1));
-	books.add(new Book("J","l","true",1));
+	helper.append(new Book("A","a","true"));
+	helper.append(new Book("B","b","true"));
+	helper.append(new Book("C","c","true"));
+	helper.append(new Book("D","d","true"));
+	helper.append(new Book("E","e","true"));
+	helper.append(new Book("F","f","true"));
+	helper.append(new Book("E","g","true"));
+	helper.append(new Book("F","h","true"));
+	helper.append(new Book("G","i","true"));
+	helper.append(new Book("H","j","true"));
+	helper.append(new Book("I","k","true"));
+	helper.append(new Book("J","l","true"));
 
 	
 }
 	
 	public static void main(String[] args) {
-		
-		
+
+	listBooks();
+	
+}
+
+	private static void listBooks() {
 		List<Book> allBook = helper.readAll();
 		for (Book b : allBook) {
 			System.out.println(b);
 		}
 		
 	}
-
-	
-	
 }

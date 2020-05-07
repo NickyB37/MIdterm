@@ -13,9 +13,8 @@ public class BookLineConverter implements LineConverter<Book>{
 		String title = parts[0];
 		String author = parts[1];
 		String status = parts[2];
-		long date = Long.parseLong(parts[3]);
 	
-		return new Book(title,author,status,1);
+		return new Book(title,author,status);
 	}
 
 }

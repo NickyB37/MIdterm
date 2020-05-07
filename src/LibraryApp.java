@@ -1,43 +1,35 @@
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class LibraryApp {
 
 	private static Scanner scnr = new Scanner(System.in);
+	private static Map<Integer, String> menu = new HashMap<>();
 	private static FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	public static ArrayList<Book> books = new ArrayList<>();
-
 	static {
-
-		helper.append(new Book("A", "a", "true"));
-		helper.append(new Book("B", "b", "true"));
-		helper.append(new Book("C", "c", "true"));
-		helper.append(new Book("D", "d", "true"));
-		helper.append(new Book("E", "e", "true"));
-		helper.append(new Book("F", "f", "true"));
-		helper.append(new Book("E", "g", "true"));
-		helper.append(new Book("F", "h", "true"));
-		helper.append(new Book("G", "i", "true"));
-		helper.append(new Book("H", "j", "true"));
-		helper.append(new Book("I", "k", "true"));
-		helper.append(new Book("J", "l", "true"));
-
+		helper.append(new Book("A", "a", "Available"));
+		helper.append(new Book("B", "b", "Available"));
+		helper.append(new Book("C", "c", "Available"));
+		helper.append(new Book("D", "d", "Available"));
+		helper.append(new Book("E", "e", "Available"));
+		helper.append(new Book("F", "f", "Available"));
+		helper.append(new Book("G", "g", "Available"));
+		helper.append(new Book("H", "h", "Available"));
+		helper.append(new Book("I", "i", "Available"));
+		helper.append(new Book("J", "j", "Available"));
+		helper.append(new Book("K", "k", "Available"));
+		helper.append(new Book("L", "l", "Available"));
 	}
 
 	public static void main(String[] args) {
+		fillMenu();
+		whileLoop();
 
-		listBooks();
-		System.out.println("Enter an author");
-		String authorName = scnr.nextLine();
-		lookUpByAuthor(authorName);
-		System.out.println("Enter a title");
-		String titleName = scnr.nextLine();
-		lookUpByTitle(titleName);
-		System.out.println("Enter a book to check out.");
-		bookCheckOut(titleName);
-        bookReturn(titleName);
 	}
 
 	private static void listBooks() {
@@ -45,7 +37,56 @@ public class LibraryApp {
 		for (Book b : allBook) {
 			System.out.println(b);
 		}
+	}
 
+	private static void fillMenu() {
+		menu.put(1, "Display books");
+		menu.put(2, "Search by author");
+		menu.put(3, "Search by title");
+		menu.put(4, "Checkout book");
+		menu.put(5, "Return book");
+		menu.put(6, "Exit");
+	}
+
+	private static void printMenu() {
+		System.out.println("Welcome to the library");
+		System.out.println("==========================");
+		for (Map.Entry<Integer, String> entry : menu.entrySet()) {
+			System.out.printf("%-10d %-10s\n", entry.getKey(), entry.getValue());
+		}
+	}
+
+	private static void whileLoop() {
+		boolean runApp = true;
+		while (runApp) {
+			printMenu();
+			System.out.println();
+			System.out.println("Choose a number from the menu.");
+			int userInt = scnr.nextInt();
+			scnr.nextLine();
+			if (userInt == 1) {
+				listBooks();
+			} else if (userInt == 2) {
+				System.out.println("Enter an author");
+				String authorName = scnr.nextLine();
+				lookUpByAuthor(authorName);
+			} else if (userInt == 3) {
+				System.out.println("Enter a title");
+				String titleName = scnr.nextLine();
+				lookUpByTitle(titleName);
+			} else if (userInt == 4) {
+				System.out.println("Enter a book to check out.");
+				String titleName = scnr.nextLine();
+				bookCheckOut(titleName);
+			} else if (userInt == 5) {
+				System.out.println("Enter a book to check out.");
+				String titleName = scnr.nextLine();
+				bookReturn(titleName);
+			} else if (userInt == 6) {
+				runApp = false;
+				System.out.println("Thanks for visiting! See you next time!");
+			}
+		}
 	}
 
 	private static void lookUpByAuthor(String authorName) {
@@ -75,17 +116,17 @@ public class LibraryApp {
 			if (b.getTitle().equalsIgnoreCase(titleName)) {
 				System.out.println("Avaiable");
 				Book userChoice = b;
-				if (userChoice.getStatus().startsWith("t")) {
+				if (userChoice.getStatus().startsWith("A")) {
 					System.out.println("Checking book out.");
-					b.setStatus("false");
+					b.setStatus("Checked out");
+					System.out.println("......");
+					System.out.println(userChoice.getTitle() + " has been successfully checked out.");
 				} else {
 					System.out.println("That book has been checked out.");
 				}
 			}
-
 		}
 		helper.rewrite(allBook);
-		listBooks();
 	}
 
 	private static void bookReturn(String titleName) {
@@ -93,11 +134,10 @@ public class LibraryApp {
 
 		for (Book b : toAllBook) {
 			if (b.getTitle().equalsIgnoreCase(titleName)) {
-		        Book userChoice = b;
-				if (userChoice.getStatus().startsWith("f")) {
-					System.out.println("Thank you for returning" + userChoice.getTitle());
+				Book userChoice = b;
+				if (userChoice.getStatus().startsWith("C")) {
+					System.out.println("Thank you for returning " + userChoice.getTitle());
 					b.setStatus("true");
-
 				} else {
 					System.out.println("That book has been checked out.");
 				}
@@ -105,6 +145,5 @@ public class LibraryApp {
 
 		}
 		helper.rewrite(toAllBook);
-		listBooks();
 	}
 }

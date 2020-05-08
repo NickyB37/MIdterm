@@ -14,21 +14,22 @@ public class LibraryApp {
 	private static FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	public static ArrayList<Book> books = new ArrayList<>();
 	private static LocalDate now = LocalDate.now();
-//	static {
-//		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
-//		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
-//		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
-//		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
-//		helper.append(new Book("Pride and Prejudice", "Jain Austen", "Available", now));
-//		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
-//		helper.append(new Book("1984", "George Orwell", "Available", now));
-//		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
-//		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
-//		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
-//		helper.append(new Book("One Day at HorrorLand", "R. L. Stine", "Available", now));
-//		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
-//	}
 
+	static {
+		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
+		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
+		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
+		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
+		helper.append(new Book("A", "Andrew Adamson", "Available", now));
+		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
+		helper.append(new Book("1984", "George Orwell", "Available", now));
+		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
+		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
+		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
+		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
+		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
+	}
+	
 	public static void main(String[] args) {
 		fillMenu();
 		updateDate();
@@ -49,7 +50,8 @@ public class LibraryApp {
 		menu.put(3, "Search by title");
 		menu.put(4, "Checkout book");
 		menu.put(5, "Return book");
-		menu.put(6, "Exit");
+		menu.put(6, "Donate a book");
+		menu.put(7, "Exit");
 	}
 
 	private static void printMenu() {
@@ -92,13 +94,26 @@ public class LibraryApp {
 			} else if (userInt == 5) {
 				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
 				bookReturn(titleName);
-			} else if (userInt == 6) {
+			}else if(userInt == 6) {
+				addBook();
+			}else if (userInt == 7) {
 				runApp = false;
 				System.out.println("Thanks for visiting! See you next time!");
 			}
 		}
 	}
 
+	private static void addBook(){
+	
+	System.out.println("Enter the authors name: ");
+	String authorToAdd = scnr.nextLine();
+
+	System.out.println("Enter the title: ");
+	String titleToAdd = scnr.nextLine();
+
+	helper.append(new Book(titleToAdd, authorToAdd, "Available", now));
+	}
+	
 	private static void lookUpByAuthor(String authorName) {
 		List<Book> allBook = helper.readAll();
 

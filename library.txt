@@ -1,0 +1,15 @@
+<<<<<<< Updated upstream
+=======
+A,a,true,2020-05-08
+B,b,true,2020-05-08
+C,c,true,2020-05-08
+D,d,true,2020-05-08
+E,e,true,2020-05-08
+F,f,true,2020-05-08
+E,g,true,2020-05-08
+F,h,true,2020-05-08
+G,i,true,2020-05-08
+H,j,true,2020-05-08
+I,k,true,2020-05-08
+J,l,true,2020-05-08
+>>>>>>> Stashed changes

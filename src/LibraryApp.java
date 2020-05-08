@@ -1,4 +1,5 @@
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,18 +13,22 @@ public class LibraryApp {
 	private static FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	public static ArrayList<Book> books = new ArrayList<>();
 	static {
-		helper.append(new Book("A", "a", "Available"));
-		helper.append(new Book("B", "b", "Available"));
-		helper.append(new Book("C", "c", "Available"));
-		helper.append(new Book("D", "d", "Available"));
-		helper.append(new Book("E", "e", "Available"));
-		helper.append(new Book("F", "f", "Available"));
-		helper.append(new Book("G", "g", "Available"));
-		helper.append(new Book("H", "h", "Available"));
-		helper.append(new Book("I", "i", "Available"));
-		helper.append(new Book("J", "j", "Available"));
-		helper.append(new Book("K", "k", "Available"));
-		helper.append(new Book("L", "l", "Available"));
+
+		LocalDate now = LocalDate.now();
+
+		helper.append(new Book("A", "a", "true", now));
+		helper.append(new Book("B", "b", "true", now ));
+		helper.append(new Book("C", "c", "true", now ));
+		helper.append(new Book("D", "d", "true", now ));
+		helper.append(new Book("E", "e", "true", now ));
+		helper.append(new Book("F", "f", "true", now));
+		helper.append(new Book("E", "g", "true", now));
+		helper.append(new Book("F", "h", "true", now));
+		helper.append(new Book("G", "i", "true", now));
+		helper.append(new Book("H", "j", "true", now));
+		helper.append(new Book("I", "k", "true", now));
+		helper.append(new Book("J", "l", "true", now));
+
 	}
 
 	public static void main(String[] args) {
@@ -121,6 +126,7 @@ public class LibraryApp {
 					b.setStatus("Checked out");
 					System.out.println("......");
 					System.out.println(userChoice.getTitle() + " has been successfully checked out.");
+
 				} else {
 					System.out.println("That book has been checked out.");
 				}

@@ -12,27 +12,25 @@ public class LibraryApp {
 	private static Map<Integer, String> menu = new HashMap<>();
 	private static FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	public static ArrayList<Book> books = new ArrayList<>();
+	private static LocalDate now = LocalDate.now();
 	static {
-
-		LocalDate now = LocalDate.now();
-
-		helper.append(new Book("A", "a", "Available", now));
-		helper.append(new Book("B", "b", "Available", now ));
-		helper.append(new Book("C", "c", "Available", now ));
-		helper.append(new Book("D", "d", "Available", now ));
-		helper.append(new Book("E", "e", "Available", now ));
-		helper.append(new Book("F", "f", "Available", now));
-		helper.append(new Book("E", "g", "Available", now));
-		helper.append(new Book("F", "h", "Available", now));
-		helper.append(new Book("G", "i", "Available", now));
-		helper.append(new Book("H", "j", "Available", now));
-		helper.append(new Book("I", "k", "Available", now));
-		helper.append(new Book("J", "l", "Available", now));
-
+		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
+		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
+		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
+		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
+		helper.append(new Book("The Lion, the witch, and the Wardrobe", "Andrew Adamson", "Available", now));
+		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
+		helper.append(new Book("1984", "George Orwell", "Available", now));
+		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
+		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
+		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
+		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
+		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
 	}
 
 	public static void main(String[] args) {
 		fillMenu();
+		updateDate();
 		whileLoop();
 
 	}
@@ -54,11 +52,23 @@ public class LibraryApp {
 	}
 
 	private static void printMenu() {
+		System.out.println();
 		System.out.println("Welcome to the library");
 		System.out.println("==========================");
 		for (Map.Entry<Integer, String> entry : menu.entrySet()) {
 			System.out.printf("%-10d %-10s\n", entry.getKey(), entry.getValue());
 		}
+	}
+	
+	private static void updateDate() {
+		List<Book> allBook = helper.readAll();
+
+		for (Book b : allBook) {
+			if (b.getStatus().startsWith("A")) {
+				b.setLocalDate(now);
+			}
+		}
+		
 	}
 
 	private static void whileLoop() {
@@ -127,7 +137,6 @@ public class LibraryApp {
 					System.out.println("......");
 					System.out.println(userChoice.getTitle() + " has been successfully checked out.");
 					b.setLocalDate(b.getLocalDate().plusWeeks(2));;
-					System.out.println(b);
 				} else {
 					System.out.println("That book has been checked out.");
 				}

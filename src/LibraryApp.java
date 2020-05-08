@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-
 public class LibraryApp {
 
 	private static Scanner scnr = new Scanner(System.in);
@@ -29,11 +28,11 @@ public class LibraryApp {
 		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
 		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
 	}
-	
+
 	public static void main(String[] args) {
 		fillMenu();
 		updateDate();
-		whileLoop();
+		//whileLoop();
 
 	}
 
@@ -62,7 +61,7 @@ public class LibraryApp {
 			System.out.printf("%-10d %-10s\n", entry.getKey(), entry.getValue());
 		}
 	}
-	
+
 	private static void updateDate() {
 		List<Book> allBook = helper.readAll();
 
@@ -71,48 +70,48 @@ public class LibraryApp {
 				b.setLocalDate(now);
 			}
 		}
-		
+
 	}
 
-	private static void whileLoop() {
-		boolean runApp = true;
-		while (runApp) {
-			printMenu();
-			System.out.println();
-			int userInt = GrandCircusValidator.getInt(scnr, "Choose a number from the menu: ");
-			if (userInt == 1) {
-				listBooks();
-			} else if (userInt == 2) {
-				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
-				lookUpByAuthor();
-			} else if (userInt == 3) {
-				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
-				lookUpByTitle();
-			} else if (userInt == 4) {
-				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
-				bookCheckOut();
-			} else if (userInt == 5) {
-				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
-				bookReturn();
-			}else if(userInt == 6) {
-				addBook();
-			}else if (userInt == 7) {
-				runApp = false;
-				System.out.println("Thanks for visiting! See you next time!");
-			}
-		}
-	}
-
-	public static void addBook(){
-	
-	System.out.println("Enter the authors name: ");
-	String authorToAdd = scnr.nextLine();
-
-	System.out.println("Enter the title: ");
-	String titleToAdd = scnr.nextLine();
-
-	helper.append(new Book(titleToAdd, authorToAdd, "Available", now));
-	}
+//	private static void whileLoop() {
+//		boolean runApp = true;
+//		while (runApp) {
+//			printMenu();
+//			System.out.println();
+//			int userInt = GrandCircusValidator.getInt(scnr, "Choose a number from the menu: ");
+//			if (userInt == 1) {
+//				listBooks();
+//			} else if (userInt == 2) {
+//				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
+//				lookUpByAuthor();
+//				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ",
+//						"[a-zA-z\\s]*");
+//				lookUpByAuthor();
+//			} else if (userInt == 3) {
+//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
+//				lookUpByTitle();
+//			} else if (userInt == 4) {
+//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
+//				bookCheckOut();
+//			} else if (userInt == 5) {
+//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
+//				bookReturn();
+//			}else if(userInt == 6) {
+//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ",
+//						"[a-zA-z\\s]*");
+//				bookCheckOut();
+//			} else if (userInt == 5) {
+//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ",
+//						"[a-zA-z\\s]*");
+//				bookReturn();
+//			} else if (userInt == 6) {
+//				addBook();
+//			} else if (userInt == 7) {
+//				runApp = false;
+//				System.out.println("Thanks for visiting! See you next time!");
+//			}
+//		}
+//	}
 	
 	public static void lookUpByAuthor() {
 		String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
@@ -149,7 +148,8 @@ public class LibraryApp {
 					b.setStatus("Checked out");
 					System.out.println("......");
 					System.out.println(userChoice.getTitle() + " has been successfully checked out.");
-					b.setLocalDate(b.getLocalDate().plusWeeks(2));;
+					b.setLocalDate(b.getLocalDate().plusWeeks(2));
+					;
 				} else {
 					System.out.println("That book has been checked out.");
 				}
@@ -175,5 +175,15 @@ public class LibraryApp {
 
 		}
 		helper.rewrite(toAllBook);
+	}
+	
+	public static void addBook() {
+
+		String authorToAdd = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter the author's name: ",
+				"[a-zA-z\\s]*");
+
+		String titleToAdd = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter the title: ", "[a-zA-z\\s]*");
+
+		helper.append(new Book(titleToAdd, authorToAdd, "Available", now));
 	}
 }

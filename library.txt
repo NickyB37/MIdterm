@@ -1,5 +1,8 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 A,a,true,2020-05-08
 B,b,true,2020-05-08
 C,c,true,2020-05-08
@@ -12,4 +15,7 @@ G,i,true,2020-05-08
 H,j,true,2020-05-08
 I,k,true,2020-05-08
 J,l,true,2020-05-08
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

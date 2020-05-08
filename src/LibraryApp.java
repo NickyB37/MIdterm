@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+
 public class LibraryApp {
 
 	private static Scanner scnr = new Scanner(System.in);
@@ -13,20 +14,20 @@ public class LibraryApp {
 	private static FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	public static ArrayList<Book> books = new ArrayList<>();
 	private static LocalDate now = LocalDate.now();
-	static {
-		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
-		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
-		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
-		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
-		helper.append(new Book("The Lion, the witch, and the Wardrobe", "Andrew Adamson", "Available", now));
-		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
-		helper.append(new Book("1984", "George Orwell", "Available", now));
-		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
-		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
-		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
-		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
-		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
-	}
+//	static {
+//		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
+//		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
+//		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
+//		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
+//		helper.append(new Book("Pride and Prejudice", "Jain Austen", "Available", now));
+//		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
+//		helper.append(new Book("1984", "George Orwell", "Available", now));
+//		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
+//		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
+//		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
+//		helper.append(new Book("One Day at HorrorLand", "R. L. Stine", "Available", now));
+//		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
+//	}
 
 	public static void main(String[] args) {
 		fillMenu();
@@ -76,26 +77,20 @@ public class LibraryApp {
 		while (runApp) {
 			printMenu();
 			System.out.println();
-			System.out.println("Choose a number from the menu.");
-			int userInt = scnr.nextInt();
-			scnr.nextLine();
+			int userInt = GrandCircusValidator.getInt(scnr, "Choose a number from the menu: ");
 			if (userInt == 1) {
 				listBooks();
 			} else if (userInt == 2) {
-				System.out.println("Enter an author");
-				String authorName = scnr.nextLine();
+				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
 				lookUpByAuthor(authorName);
 			} else if (userInt == 3) {
-				System.out.println("Enter a title");
-				String titleName = scnr.nextLine();
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
 				lookUpByTitle(titleName);
 			} else if (userInt == 4) {
-				System.out.println("Enter a book to check out.");
-				String titleName = scnr.nextLine();
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
 				bookCheckOut(titleName);
 			} else if (userInt == 5) {
-				System.out.println("Enter a book to check out.");
-				String titleName = scnr.nextLine();
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
 				bookReturn(titleName);
 			} else if (userInt == 6) {
 				runApp = false;
@@ -109,7 +104,7 @@ public class LibraryApp {
 
 		for (Book b : allBook) {
 			if (b.getAuthor().equalsIgnoreCase(authorName)) {
-				System.out.println(b.getTitle());
+				System.out.println(b);
 			}
 		}
 	}
@@ -119,7 +114,7 @@ public class LibraryApp {
 
 		for (Book b : allBook) {
 			if (b.getTitle().equalsIgnoreCase(titleName)) {
-				System.out.println(b.getAuthor());
+				System.out.println(b);
 			}
 		}
 	}

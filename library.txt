@@ -1,12 +1,12 @@
-A,a,Checked out,2020-05-22
-B,b,Available,2020-05-08
-C,c,Available,2020-05-08
-D,d,Available,2020-05-08
-E,e,Available,2020-05-08
-F,f,Available,2020-05-08
-E,g,Available,2020-05-08
-F,h,Available,2020-05-08
-G,i,Available,2020-05-08
-H,j,Available,2020-05-08
-I,k,Available,2020-05-08
-J,l,Available,2020-05-08
+The Great Gatsby,F. Scott Fitzgerald,Available,2020-05-08
+The Catcher in the Rye,J. D. Salinger,Available,2020-05-08
+Brave New World,Aldous Huxley,Available,2020-05-08
+Tail of Two Cites,Charles Dickens,Available,2020-05-08
+Pride and Prejudice,Jain Austen,Available,2020-05-08
+From the Earth to the Moon,Jules Verne,Available,2020-05-08
+1984,George Orwell,Available,2020-05-08
+Animal Farm,George Orwell,Available,2020-05-08
+Never Die Alone,Donald Goines,Available,2020-05-08
+The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-08
+One Day at HorrorLand,R. L. Stine,Available,2020-05-08
+To Kill a Mockingbird,Harper Lee,Available,2020-05-08

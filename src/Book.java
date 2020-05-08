@@ -1,6 +1,7 @@
 
 import java.time.LocalDate;
 
+
 public class Book {
 	protected String title;
 	protected String author;
@@ -42,7 +43,7 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return String.format("Title: " + title + " Author: " + author + " Status: " + status + " Date: " + localDate);
+		return String.format("Title: %-40s Author: %-20s Status: %-10s  Date: %s", title, author, status, localDate.toString());
 	}
 	
 	

@@ -16,18 +16,18 @@ public class LibraryApp {
 
 		LocalDate now = LocalDate.now();
 
-		helper.append(new Book("A", "a", "true", now));
-		helper.append(new Book("B", "b", "true", now ));
-		helper.append(new Book("C", "c", "true", now ));
-		helper.append(new Book("D", "d", "true", now ));
-		helper.append(new Book("E", "e", "true", now ));
-		helper.append(new Book("F", "f", "true", now));
-		helper.append(new Book("E", "g", "true", now));
-		helper.append(new Book("F", "h", "true", now));
-		helper.append(new Book("G", "i", "true", now));
-		helper.append(new Book("H", "j", "true", now));
-		helper.append(new Book("I", "k", "true", now));
-		helper.append(new Book("J", "l", "true", now));
+		helper.append(new Book("A", "a", "Available", now));
+		helper.append(new Book("B", "b", "Available", now ));
+		helper.append(new Book("C", "c", "Available", now ));
+		helper.append(new Book("D", "d", "Available", now ));
+		helper.append(new Book("E", "e", "Available", now ));
+		helper.append(new Book("F", "f", "Available", now));
+		helper.append(new Book("E", "g", "Available", now));
+		helper.append(new Book("F", "h", "Available", now));
+		helper.append(new Book("G", "i", "Available", now));
+		helper.append(new Book("H", "j", "Available", now));
+		helper.append(new Book("I", "k", "Available", now));
+		helper.append(new Book("J", "l", "Available", now));
 
 	}
 
@@ -126,7 +126,8 @@ public class LibraryApp {
 					b.setStatus("Checked out");
 					System.out.println("......");
 					System.out.println(userChoice.getTitle() + " has been successfully checked out.");
-
+					b.setLocalDate(b.getLocalDate().plusWeeks(2));;
+					System.out.println(b);
 				} else {
 					System.out.println("That book has been checked out.");
 				}

@@ -42,7 +42,7 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return String.format("Title: " + title + " Author: " + author + " Status: " + status);
+		return String.format("Title: " + title + " Author: " + author + " Status: " + status + " Date: " + localDate);
 	}
 	
 	

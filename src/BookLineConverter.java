@@ -10,12 +10,10 @@ public class BookLineConverter implements LineConverter<Book>{
 
 	@Override
 	public Book fromLine(String line) {
-	
 		String[] parts = line.split(",");
 		String title = parts[0];
 		String author = parts[1];
 		String status = parts[2];
-		System.out.println(Arrays.toString(parts));
 		LocalDate date = LocalDate.parse(parts[3]);
 		return new Book(title,author,status, date);
 	}

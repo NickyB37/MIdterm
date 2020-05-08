@@ -37,7 +37,7 @@ public class LibraryApp {
 
 	}
 
-	private static void listBooks() {
+	public static void listBooks() {
 		List<Book> allBook = helper.readAll();
 		for (Book b : allBook) {
 			System.out.println(b);
@@ -84,16 +84,16 @@ public class LibraryApp {
 				listBooks();
 			} else if (userInt == 2) {
 				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
-				lookUpByAuthor(authorName);
+				lookUpByAuthor();
 			} else if (userInt == 3) {
 				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
-				lookUpByTitle(titleName);
+				lookUpByTitle();
 			} else if (userInt == 4) {
 				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
-				bookCheckOut(titleName);
+				bookCheckOut();
 			} else if (userInt == 5) {
 				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
-				bookReturn(titleName);
+				bookReturn();
 			}else if(userInt == 6) {
 				addBook();
 			}else if (userInt == 7) {
@@ -103,7 +103,7 @@ public class LibraryApp {
 		}
 	}
 
-	private static void addBook(){
+	public static void addBook(){
 	
 	System.out.println("Enter the authors name: ");
 	String authorToAdd = scnr.nextLine();
@@ -114,7 +114,8 @@ public class LibraryApp {
 	helper.append(new Book(titleToAdd, authorToAdd, "Available", now));
 	}
 	
-	private static void lookUpByAuthor(String authorName) {
+	public static void lookUpByAuthor() {
+		String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -124,7 +125,8 @@ public class LibraryApp {
 		}
 	}
 
-	private static void lookUpByTitle(String titleName) {
+	public static void lookUpByTitle() {
+		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -134,7 +136,8 @@ public class LibraryApp {
 		}
 	}
 
-	private static void bookCheckOut(String titleName) {
+	public static void bookCheckOut() {
+		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -155,7 +158,8 @@ public class LibraryApp {
 		helper.rewrite(allBook);
 	}
 
-	private static void bookReturn(String titleName) {
+	public static void bookReturn() {
+		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
 		List<Book> toAllBook = helper.readAll();
 
 		for (Book b : toAllBook) {

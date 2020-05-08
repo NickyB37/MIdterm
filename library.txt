@@ -2,23 +2,14 @@ The Great Gatsby,F. Scott Fitzgerald,Available,2020-05-08
 The Catcher in the Rye,J. D. Salinger,Available,2020-05-08
 Brave New World,Aldous Huxley,Available,2020-05-08
 Tail of Two Cites,Charles Dickens,Available,2020-05-08
-<<<<<<< Updated upstream
-Pride and Prejudice,Jain Austen,Available,2020-05-08
-=======
 A,Andrew Adamson,Available,2020-05-08
->>>>>>> Stashed changes
 From the Earth to the Moon,Jules Verne,Available,2020-05-08
 1984,George Orwell,Available,2020-05-08
 Animal Farm,George Orwell,Available,2020-05-08
 Never Die Alone,Donald Goines,Available,2020-05-08
 The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-08
-<<<<<<< Updated upstream
-One Day at HorrorLand,R. L. Stine,Available,2020-05-08
-To Kill a Mockingbird,Harper Lee,Available,2020-05-08
-=======
 Goosebumps Series,R. L. Stine,Available,2020-05-08
 To Kill a Mockingbird,Harper Lee,Available,2020-05-08
-My,Noah,Available,2020-05-08
 The Great Gatsby,F. Scott Fitzgerald,Available,2020-05-08
 The Catcher in the Rye,J. D. Salinger,Available,2020-05-08
 Brave New World,Aldous Huxley,Available,2020-05-08
@@ -31,5 +22,3 @@ Never Die Alone,Donald Goines,Available,2020-05-08
 The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-08
 Goosebumps Series,R. L. Stine,Available,2020-05-08
 To Kill a Mockingbird,Harper Lee,Available,2020-05-08
-My Life Story,Noah Slavik,Available,2020-05-08
->>>>>>> Stashed changes

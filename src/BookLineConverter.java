@@ -1,7 +1,6 @@
 import java.time.LocalDate;
 
 
-
 public class BookLineConverter implements LineConverter<Book>{
 
 	@Override

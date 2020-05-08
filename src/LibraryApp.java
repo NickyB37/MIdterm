@@ -137,7 +137,7 @@ public class LibraryApp {
 				Book userChoice = b;
 				if (userChoice.getStatus().startsWith("C")) {
 					System.out.println("Thank you for returning " + userChoice.getTitle());
-					b.setStatus("true");
+					b.setStatus("Available");
 				} else {
 					System.out.println("That book has been checked out.");
 				}

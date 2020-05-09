@@ -1,14 +1,19 @@
+package com.grandcircus.library.gui;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
+import com.grandcircus.library.model.Book;
+import com.grandcircus.library.service.LibraryService;
+
 public class ReturnBookGUI extends JDialog{
 
 	private static final long serialVersionUID = 1L;
 
-	public ReturnBookGUI(LibraryApp libraryApp) {
+	public ReturnBookGUI(LibraryService libraryApp) {
 		JComboBox bookList = new JComboBox(libraryApp.getAllBooks().toArray());
 		JButton returnBookButton = new JButton("Return book");
 		

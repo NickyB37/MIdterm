@@ -1,3 +1,4 @@
+package com.grandcircus.library.service;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -5,14 +6,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-public class LibraryApp {
+import com.grandcircus.library.fileio.BookLineConverter;
+import com.grandcircus.library.fileio.FileHelper;
+import com.grandcircus.library.model.Book;
+import com.grandcircus.library.validator.GrandCircusValidator;
+
+public class LibraryService {
 
 	private Scanner scnr = new Scanner(System.in);
 	private Map<Integer, String> menu = new HashMap<>();
 	private FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	private LocalDate now = LocalDate.now();
 
-	public LibraryApp() {
+	public LibraryService() {
 //		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
 //		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
 //		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));

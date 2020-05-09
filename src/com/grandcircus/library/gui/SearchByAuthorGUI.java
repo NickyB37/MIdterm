@@ -1,9 +1,13 @@
+package com.grandcircus.library.gui;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import com.grandcircus.library.service.LibraryService;
 
 public class SearchByAuthorGUI extends JDialog {
 	
@@ -14,7 +18,7 @@ public class SearchByAuthorGUI extends JDialog {
 	JButton searchAuthorButton = new JButton("Enter");
 	JTextArea bookTextArea = new JTextArea(20, 75);
 	
-	public SearchByAuthorGUI(LibraryApp libraryApp) {
+	public SearchByAuthorGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
 		setModal(true);
 

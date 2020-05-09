@@ -1,14 +1,19 @@
+package com.grandcircus.library.gui;
+
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
+import com.grandcircus.library.model.Book;
+import com.grandcircus.library.service.LibraryService;
+
 public class CheckoutBookGUI extends JDialog {
 	
 	private static final long serialVersionUID = 1L;
 
-	public CheckoutBookGUI(LibraryApp libraryApp) {
+	public CheckoutBookGUI(LibraryService libraryApp) {
 		JComboBox<Book> bookList = new JComboBox(libraryApp.getAllBooks().toArray());
 		JButton checkoutBookButton = new JButton("Checkout book");
 		

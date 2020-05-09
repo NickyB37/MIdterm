@@ -1,5 +1,8 @@
+package com.grandcircus.library.fileio;
+
 import java.time.LocalDate;
 
+import com.grandcircus.library.model.Book;
 
 public class BookLineConverter implements LineConverter<Book>{
 

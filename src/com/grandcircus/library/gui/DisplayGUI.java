@@ -1,7 +1,11 @@
+package com.grandcircus.library.gui;
+
 import javax.swing.BoxLayout;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+
+import com.grandcircus.library.service.LibraryService;
 
 public class DisplayGUI extends JDialog {
 
@@ -10,7 +14,7 @@ public class DisplayGUI extends JDialog {
 	JLabel authorNameLabel = new JLabel("List of books we have:");
 	JTextArea bookTextArea = new JTextArea(20, 20);
 	
-	public DisplayGUI(LibraryApp libraryApp) {
+	public DisplayGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
 		setModal(true);
 

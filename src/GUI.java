@@ -1,18 +1,14 @@
+import java.awt.GridLayout;
+
 import javax.swing.*;
 
 public class GUI {
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		LibraryApp libraryApp = new LibraryApp();
-		//These objects are dependent on the object LibraryApp for functionality
-		DisplayGUI displayGui = new DisplayGUI(libraryApp);
-		SearchByAuthorGUI searchByAuthorGui = new SearchByAuthorGUI(libraryApp);
-		SearchByTitleGUI searchByTitleGui = new SearchByTitleGUI(libraryApp);
-		CheckoutBookGUI checkoutBookGui = new CheckoutBookGUI(libraryApp);
-		ReturnBookGUI returnBookGui = new ReturnBookGUI(libraryApp);
-		DonateBookGUI donateBookGui = new DonateBookGUI(libraryApp);
+
+		JFrame frame = new JFrame();// creating instance of JFrame
+		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		
-		JFrame f = new JFrame();// creating instance of JFrame
 		JButton display = new JButton("Display books");// creating instance of JButton
 		JButton searchByAuthor = new JButton("Search by author");
 		JButton searchByTitle = new JButton("Search by title");
@@ -21,54 +17,54 @@ public class GUI {
 		JButton donateBook = new JButton("Donate a book");
 		JButton exit = new JButton("Exit");
 		
-		display.setBounds(130, 100, 250, 40);// x axis, y axis, width, height
-		searchByAuthor.setBounds(130, 140, 250, 40);
-		searchByTitle.setBounds(130, 180, 250, 40);
-		checkoutBook.setBounds(130, 220, 250, 40);
-		returnBook.setBounds(130, 260, 250, 40);
-		donateBook.setBounds(130, 300, 250, 40);
-		exit.setBounds(130, 340, 250, 40);
-
+		// 0 in the parameter means unlimited rows
+		frame.setLayout(new GridLayout(0, 1));
+        
+		frame.add(display);
+		frame.add(searchByAuthor);
+		frame.add(searchByTitle);
+		frame.add(checkoutBook);
+		frame.add(returnBook);
+		frame.add(donateBook);
+		frame.add(exit);
+        
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.setVisible(true);
 		
-		f.add(display);// adding button in JFrame
-		f.add(searchByAuthor);
-		f.add(searchByTitle);
-		f.add(checkoutBook);
-		f.add(returnBook);
-		f.add(donateBook);
-		f.add(exit);
-		
-		f.setSize(1000, 1500);// 400 width and 500 height
-		f.setLayout(null);// using no layout managers
-		f.setVisible(true);// making the frame visible
-		
+		//Used lambdas because the ActionListener interface only has one method in it. 
+		//Otherwise we could not use lambda.
 		display.addActionListener(event -> {
-			
+			new DisplayGUI(libraryApp);
 		});
 		
 		searchByAuthor.addActionListener(event -> {
-			searchByAuthorGui.setVisible(true);
+			new SearchByAuthorGUI(libraryApp);
 		});
 		
 		searchByTitle.addActionListener(event -> {
-			searchByTitleGui.setVisible(true);
+			new SearchByTitleGUI(libraryApp);
 		});
 		
 		checkoutBook.addActionListener(event -> {
+			CheckoutBookGUI checkoutBookGui = new CheckoutBookGUI(libraryApp);
 			checkoutBook.setVisible(true);
 		});
 		
 		returnBook.addActionListener(event -> {
+			ReturnBookGUI returnBookGui = new ReturnBookGUI(libraryApp);
 			returnBook.setVisible(true);
 		});
 		
 		donateBook.addActionListener(event -> {
+			DonateBookGUI donateBookGui = new DonateBookGUI(libraryApp);
 			donateBook.setVisible(true);
 		});
 		
 		exit.addActionListener(event -> {
 			System.out.println("Thank you for stoping by our humble library!");
-			System.exit(0);
+			frame.setVisible(false);
+			frame.dispose();
 		});
 	}
 }

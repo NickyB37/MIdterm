@@ -1,35 +1,43 @@
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class SearchByTitleGUI extends JFrame{
+public class SearchByTitleGUI extends JDialog {
 	
 
 	private static final long serialVersionUID = 1L;
 	
-	JPanel panel = new JPanel();
-	JLabel authorTitleLable = new JLabel();
-	JTextField titleTextField = new JTextField(30);
-	JButton searchTitleButton = new JButton("Enter");
+	JLabel titleNameLabel = new JLabel("Enter title of a book from list:");
+	JTextField titleNameTextField = new JTextField(30);
+	JButton titleAuthorButton = new JButton("Enter");
+	JTextArea bookTextArea = new JTextArea(20, 20);
 	
 	public SearchByTitleGUI(LibraryApp libraryApp) {
-		panel.setVisible(true);
-		panel.setSize(400, 200);
-		panel.setLayout(null);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		this.setSize(400, 200);
+		setModal(true);
+
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
-		panel.add(titleTextField);
+		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 		
-		panel.add(searchTitleButton);
+		this.add(titleNameLabel);
+		this.add(titleNameTextField);
 		
-		searchTitleButton.addActionListener(event -> {
-			String input = titleTextField.getText();
-			libraryApp.lookUpByTitle(input);
+		this.add(titleAuthorButton);
+		this.add(bookTextArea);
+		
+		this.pack();
+		this.setLocationRelativeTo(null);
+		
+		setVisible(true);
+		
+		titleAuthorButton.addActionListener(event -> {
+			String input = titleNameTextField.getText();
+			String books = libraryApp.lookUpByAuthor(input);
+			bookTextArea.setText(books);
 		});
-		panel.add(authorTitleLable);
-		add(panel);
-		
 	}
 }

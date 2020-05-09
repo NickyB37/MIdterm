@@ -13,18 +13,18 @@ public class LibraryApp {
 	private LocalDate now = LocalDate.now();
 
 	public LibraryApp() {
-		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
-		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
-		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
-		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
-		helper.append(new Book("A", "Andrew Adamson", "Available", now));
-		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
-		helper.append(new Book("1984", "George Orwell", "Available", now));
-		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
-		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
-		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
-		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
-		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
+//		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
+//		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
+//		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
+//		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
+//		helper.append(new Book("A", "Andrew Adamson", "Available", now));
+//		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
+//		helper.append(new Book("1984", "George Orwell", "Available", now));
+//		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
+//		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
+//		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
+//		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
+//		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
 
 		// fillMenu();
 		// updateDate();
@@ -32,14 +32,14 @@ public class LibraryApp {
 
 	}
 
-	public void listBooks() {
+	public String listBooks() {
 		List<Book> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
 		for (Book b : allBook) {
 			sb.append(b);
-			sb.append(",");
-			System.out.println(b);
+			sb.append("\n");
 		}
+		return sb.toString();
 	}
 
 	private void fillMenu() {
@@ -126,19 +126,20 @@ public class LibraryApp {
 		return sb.toString();
 	}
 
-	public void lookUpByTitle(String titleName) {
-//		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
+	public String lookUpByTitle(String titleName) {
 		List<Book> allBook = helper.readAll();
+		StringBuilder sb = new StringBuilder();
 
 		for (Book b : allBook) {
-			if (b.getTitle().equalsIgnoreCase(titleName)) {
-				System.out.println(b);
+			if (b.getAuthor().equalsIgnoreCase(titleName)) {
+				sb.append(b);
+				sb.append("\n");
 			}
 		}
+		return sb.toString();
 	}
 
 	public void bookCheckOut(String titleName) {
-//		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {

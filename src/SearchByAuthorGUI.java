@@ -12,7 +12,7 @@ public class SearchByAuthorGUI extends JDialog {
 	JLabel authorNameLabel = new JLabel("Enter author name from list:");
 	JTextField authorNameTextField = new JTextField(30);
 	JButton searchAuthorButton = new JButton("Enter");
-	JTextArea bookTextArea = new JTextArea(20, 20);
+	JTextArea bookTextArea = new JTextArea(20, 75);
 	
 	public SearchByAuthorGUI(LibraryApp libraryApp) {
 		this.setSize(400, 200);
@@ -31,12 +31,12 @@ public class SearchByAuthorGUI extends JDialog {
 		this.pack();
 		this.setLocationRelativeTo(null);
 		
-		setVisible(true);
-		
 		searchAuthorButton.addActionListener(event -> {
 			String input = authorNameTextField.getText();
 			String books = libraryApp.lookUpByAuthor(input);
 			bookTextArea.setText(books);
 		});
+		
+		setVisible(true);
 	}
 }

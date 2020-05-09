@@ -62,7 +62,7 @@ public class GUI {
 		});
 		
 		exit.addActionListener(event -> {
-			System.out.println("Thank you for stoping by our humble library!");
+			System.out.println("Thank you for stopping by our humble library!");
 			frame.setVisible(false);
 			frame.dispose();
 		});

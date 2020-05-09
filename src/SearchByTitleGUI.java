@@ -13,7 +13,7 @@ public class SearchByTitleGUI extends JDialog {
 	JLabel titleNameLabel = new JLabel("Enter title of a book from list:");
 	JTextField titleNameTextField = new JTextField(30);
 	JButton titleAuthorButton = new JButton("Enter");
-	JTextArea bookTextArea = new JTextArea(20, 20);
+	JTextArea bookTextArea = new JTextArea(20, 75);
 	
 	public SearchByTitleGUI(LibraryApp libraryApp) {
 		this.setSize(400, 200);
@@ -32,12 +32,12 @@ public class SearchByTitleGUI extends JDialog {
 		this.pack();
 		this.setLocationRelativeTo(null);
 		
-		setVisible(true);
-		
 		titleAuthorButton.addActionListener(event -> {
 			String input = titleNameTextField.getText();
-			String books = libraryApp.lookUpByAuthor(input);
+			String books = libraryApp.lookUpByTitle(input);
 			bookTextArea.setText(books);
 		});
+		
+		setVisible(true);
 	}
 }

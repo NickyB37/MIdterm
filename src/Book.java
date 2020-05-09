@@ -43,7 +43,7 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return String.format("Title: %-40s Author: %-20s Status: %-10s  Date: %s", title, author, status, localDate.toString());
+		return String.format("Title: " + title + " Author: " + author + " Status: " + status + " Date: " + localDate.toString());
 	}
 	
 	

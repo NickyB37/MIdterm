@@ -31,11 +31,6 @@ public class LibraryService {
 //		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
 //		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
 //		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
-
-		// fillMenu();
-		// updateDate();
-		// whileLoop();
-
 	}
 
 	public String listBooks() {
@@ -101,7 +96,6 @@ public class LibraryService {
 			if (b.getTitle().equalsIgnoreCase(book.getTitle())) {
 				Book userChoice = b;
 				if (userChoice.getStatus().startsWith("C")) {
-					System.out.println("Thank you for returning " + userChoice.getTitle());
 					b.setStatus("Available");
 					isReturnSuccessful = true;
 					break;

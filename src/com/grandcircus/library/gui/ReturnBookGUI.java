@@ -32,7 +32,7 @@ public class ReturnBookGUI extends JDialog{
 		
 		returnBookButton.addActionListener(event -> {
 			Book selectedBook = (Book) bookList.getSelectedItem();
-			if (libraryApp.checkoutBook(selectedBook)) {
+			if (libraryApp.bookReturn(selectedBook)) {
 				JOptionPane.showMessageDialog(this, selectedBook + " Has been successfully returned!");
 			} else {
 			JOptionPane.showMessageDialog(this, selectedBook + " Was never checked out");

@@ -1,10 +1,10 @@
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
-public abstract class GUI implements ActionListener{
+public class GUI {
 	public static void main(String[] args) {
+		
+		LibraryApp libraryApp = new LibraryApp();
+		SearchByAuthorGUI searchByAuthorGui = new SearchByAuthorGUI(libraryApp); 
 		
 		JFrame f = new JFrame();// creating instance of JFrame
 		JButton display = new JButton("Display books");// creating instance of JButton
@@ -33,67 +33,67 @@ public abstract class GUI implements ActionListener{
 		f.add(exit);
 		
 		
-		display.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.listBooks();
-			   }
-		}
-		);
 		
-		searchByAuthor.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.lookUpByAuthor();
-			   }
-		}
-		);
+		display.addActionListener(event -> {
+			
+		});
 		
 		
-		searchByTitle.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.lookUpByTitle();
-			   }
-		}
-		);
+		searchByAuthor.addActionListener(event -> {
+			searchByAuthorGui.setVisible(true);
+		});
 		
-		searchByTitle.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.lookUpByTitle();
-			   }
-		}
-		);
+//		searchByTitle.addActionListener(new ClickListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			      LibraryApp.lookUpByTitle();
+//			   }
+//		}
+//		);
+//		
+//		searchByTitle.addActionListener(new ClickListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			      LibraryApp.lookUpByTitle();
+//			   }
+//		}
+//		);
+//		
+//		checkoutBook.addActionListener(new ClickListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			      LibraryApp.bookCheckOut();
+//			   }
+//		}
+//		);
+//		
+//		returnBook.addActionListener(new ClickListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			      LibraryApp.bookReturn();
+//			   }
+//		}
+//		);
 		
+//		donateBook.addActionListener(new ClickListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			      LibraryApp.addBook();
+//			   }
+//		}
+//		);
 		
+		donateBook.addActionListener(event -> {
+			libraryApp.addBook();
+		});
 		
+//		exit.addActionListener(new ClickListener() {
+//			public void actionPerformed(ActionEvent e) {
+//			     System.out.println("Thank you for stopping by our humble library!");
+//			   System.exit(0);
+//			}
+//		}
+//		);
 		
-		
-		checkoutBook.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.bookCheckOut();
-			   }
-		}
-		);
-		
-		returnBook.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.bookReturn();
-			   }
-		}
-		);
-		
-		donateBook.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			      LibraryApp.addBook();
-			   }
-		}
-		);
-		
-		exit.addActionListener(new ClickListener() {
-			public void actionPerformed(ActionEvent e) {
-			     System.out.println("Thank you for stopping by our humble library!");
-			   System.exit(0);
-			}
-		}
-		);
+		exit.addActionListener(event -> {
+			System.out.println("Thank you for stoping by our humble library!");
+			System.exit(0);
+		});
 		
 
 		
@@ -102,19 +102,3 @@ public abstract class GUI implements ActionListener{
 		f.setVisible(true);// making the frame visible
 	}
 }
-	class ClickListener implements ActionListener {
-		   public void actionPerformed(ActionEvent e) {
-		   }
-		}
-	
-	
-	class txtInputListener implements ActionListener
-	{
-		JTextField txtInput = new JTextField("");
-		public void actionPerformed(ActionEvent event)
-	    {
-	        String input = txtInput.getText();   //receive input from text field
-	        System.out.println(input);
-	    }
-	}
-

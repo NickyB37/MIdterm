@@ -1,6 +1,5 @@
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,13 +7,12 @@ import java.util.Scanner;
 
 public class LibraryApp {
 
-	private static Scanner scnr = new Scanner(System.in);
-	private static Map<Integer, String> menu = new HashMap<>();
-	private static FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
-	public static ArrayList<Book> books = new ArrayList<>();
-	private static LocalDate now = LocalDate.now();
+	private Scanner scnr = new Scanner(System.in);
+	private Map<Integer, String> menu = new HashMap<>();
+	private FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
+	private LocalDate now = LocalDate.now();
 
-	static {
+	public LibraryApp() {
 		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
 		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
 		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
@@ -27,23 +25,24 @@ public class LibraryApp {
 		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
 		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
 		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
-	}
 
-	public static void main(String[] args) {
-		fillMenu();
-		updateDate();
+		//fillMenu();
+		//updateDate();
 		//whileLoop();
 
 	}
 
-	public static void listBooks() {
+	public void listBooks() {
 		List<Book> allBook = helper.readAll();
+		StringBuilder sb = new StringBuilder();
 		for (Book b : allBook) {
+			sb.append(b);
+			sb.append(",");
 			System.out.println(b);
 		}
 	}
 
-	private static void fillMenu() {
+	private void fillMenu() {
 		menu.put(1, "Display books");
 		menu.put(2, "Search by author");
 		menu.put(3, "Search by title");
@@ -53,7 +52,7 @@ public class LibraryApp {
 		menu.put(7, "Exit");
 	}
 
-	private static void printMenu() {
+	private void printMenu() {
 		System.out.println();
 		System.out.println("Welcome to the library");
 		System.out.println("==========================");
@@ -62,7 +61,7 @@ public class LibraryApp {
 		}
 	}
 
-	private static void updateDate() {
+	private void updateDate() {
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -73,48 +72,48 @@ public class LibraryApp {
 
 	}
 
-//	private static void whileLoop() {
-//		boolean runApp = true;
-//		while (runApp) {
-//			printMenu();
-//			System.out.println();
-//			int userInt = GrandCircusValidator.getInt(scnr, "Choose a number from the menu: ");
-//			if (userInt == 1) {
-//				listBooks();
-//			} else if (userInt == 2) {
-//				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
-//				lookUpByAuthor();
-//				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ",
-//						"[a-zA-z\\s]*");
-//				lookUpByAuthor();
-//			} else if (userInt == 3) {
-//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
-//				lookUpByTitle();
-//			} else if (userInt == 4) {
-//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
-//				bookCheckOut();
-//			} else if (userInt == 5) {
-//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
-//				bookReturn();
-//			}else if(userInt == 6) {
-//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ",
-//						"[a-zA-z\\s]*");
-//				bookCheckOut();
-//			} else if (userInt == 5) {
-//				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ",
-//						"[a-zA-z\\s]*");
-//				bookReturn();
-//			} else if (userInt == 6) {
-//				addBook();
-//			} else if (userInt == 7) {
-//				runApp = false;
-//				System.out.println("Thanks for visiting! See you next time!");
-//			}
-//		}
-//	}
-	
-	public static void lookUpByAuthor() {
-		String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
+	private void whileLoop() {
+		boolean runApp = true;
+		while (runApp) {
+			printMenu();
+			System.out.println();
+			int userInt = GrandCircusValidator.getInt(scnr, "Choose a number from the menu: ");
+			if (userInt == 1) {
+				listBooks();
+			} else if (userInt == 2) {
+				String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ",
+						"[a-zA-z\\s]*");
+				lookUpByAuthor(authorName);
+			} else if (userInt == 3) {
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
+				lookUpByTitle(titleName);
+			} else if (userInt == 4) {
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ",
+						"[a-zA-z\\s]*");
+				bookCheckOut(titleName);
+			} else if (userInt == 5) {
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ",
+						"[a-zA-z\\s]*");
+				bookReturn(titleName);
+			} else if (userInt == 6) {
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ",
+						"[a-zA-z\\s]*");
+				bookCheckOut(titleName);
+			} else if (userInt == 5) {
+				String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ",
+						"[a-zA-z\\s]*");
+				bookReturn(titleName);
+			} else if (userInt == 6) {
+				addBook();
+			} else if (userInt == 7) {
+				runApp = false;
+				System.out.println("Thanks for visiting! See you next time!");
+			}
+		}
+	}
+
+	public void lookUpByAuthor(String authorName) {
+//		String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -124,8 +123,8 @@ public class LibraryApp {
 		}
 	}
 
-	public static void lookUpByTitle() {
-		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
+	public void lookUpByTitle(String titleName) {
+//		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a title: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -135,8 +134,8 @@ public class LibraryApp {
 		}
 	}
 
-	public static void bookCheckOut() {
-		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
+	public void bookCheckOut(String titleName) {
+//		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to check out: ", "[a-zA-z\\s]*");
 		List<Book> allBook = helper.readAll();
 
 		for (Book b : allBook) {
@@ -158,8 +157,8 @@ public class LibraryApp {
 		helper.rewrite(allBook);
 	}
 
-	public static void bookReturn() {
-		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
+	public void bookReturn(String titleName) {
+//		String titleName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter a book to return: ", "[a-zA-z\\s]*");
 		List<Book> toAllBook = helper.readAll();
 
 		for (Book b : toAllBook) {
@@ -176,8 +175,8 @@ public class LibraryApp {
 		}
 		helper.rewrite(toAllBook);
 	}
-	
-	public static void addBook() {
+
+	public void addBook() {
 
 		String authorToAdd = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter the author's name: ",
 				"[a-zA-z\\s]*");

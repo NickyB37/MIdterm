@@ -4,8 +4,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class SearchByAuthorGUI extends JFrame{
+public class SearchByTitleGUI extends JFrame{
 	
+
 	private static final long serialVersionUID = 1L;
 	
 	JPanel jp = new JPanel();
@@ -13,7 +14,7 @@ public class SearchByAuthorGUI extends JFrame{
 	JTextField jt = new JTextField(30);
 	JButton jb = new JButton("Enter");
 	
-	public SearchByAuthorGUI(LibraryApp libraryApp) {
+	public SearchByTitleGUI(LibraryApp libraryApp) {
 		jp.setVisible(true);
 		jp.setSize(400, 200);
 		jp.setLayout(null);
@@ -25,11 +26,10 @@ public class SearchByAuthorGUI extends JFrame{
 		
 		jb.addActionListener(event -> {
 			String input = jt.getText();
-			libraryApp.lookUpByAuthor(input);
+			libraryApp.lookUpByTitle(input);
 		});
 		jp.add(jl);
 		add(jp);
 		
 	}
-
 }

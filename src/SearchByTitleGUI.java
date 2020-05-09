@@ -9,27 +9,27 @@ public class SearchByTitleGUI extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	
-	JPanel jp = new JPanel();
-	JLabel jl = new JLabel();
-	JTextField jt = new JTextField(30);
-	JButton jb = new JButton("Enter");
+	JPanel panel = new JPanel();
+	JLabel authorTitleLable = new JLabel();
+	JTextField titleTextField = new JTextField(30);
+	JButton searchTitleButton = new JButton("Enter");
 	
 	public SearchByTitleGUI(LibraryApp libraryApp) {
-		jp.setVisible(true);
-		jp.setSize(400, 200);
-		jp.setLayout(null);
+		panel.setVisible(true);
+		panel.setSize(400, 200);
+		panel.setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		jp.add(jt);
+		panel.add(titleTextField);
 		
-		jp.add(jb);
+		panel.add(searchTitleButton);
 		
-		jb.addActionListener(event -> {
-			String input = jt.getText();
+		searchTitleButton.addActionListener(event -> {
+			String input = titleTextField.getText();
 			libraryApp.lookUpByTitle(input);
 		});
-		jp.add(jl);
-		add(jp);
+		panel.add(authorTitleLable);
+		add(panel);
 		
 	}
 }

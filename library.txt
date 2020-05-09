@@ -10,27 +10,3 @@ Never Die Alone,Donald Goines,Available,2020-05-09
 The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-09
 Goosebumps Series,R. L. Stine,Available,2020-05-09
 To Kill a Mockingbird,Harper Lee,Available,2020-05-09
-The Great Gatsby,F. Scott Fitzgerald,Available,2020-05-09
-The Catcher in the Rye,J. D. Salinger,Available,2020-05-09
-Brave New World,Aldous Huxley,Available,2020-05-09
-Tail of Two Cites,Charles Dickens,Available,2020-05-09
-A,Andrew Adamson,Available,2020-05-09
-From the Earth to the Moon,Jules Verne,Available,2020-05-09
-1984,George Orwell,Available,2020-05-09
-Animal Farm,George Orwell,Available,2020-05-09
-Never Die Alone,Donald Goines,Available,2020-05-09
-The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-09
-Goosebumps Series,R. L. Stine,Available,2020-05-09
-To Kill a Mockingbird,Harper Lee,Available,2020-05-09
-The Great Gatsby,F. Scott Fitzgerald,Available,2020-05-09
-The Catcher in the Rye,J. D. Salinger,Available,2020-05-09
-Brave New World,Aldous Huxley,Available,2020-05-09
-Tail of Two Cites,Charles Dickens,Available,2020-05-09
-A,Andrew Adamson,Available,2020-05-09
-From the Earth to the Moon,Jules Verne,Available,2020-05-09
-1984,George Orwell,Available,2020-05-09
-Animal Farm,George Orwell,Available,2020-05-09
-Never Die Alone,Donald Goines,Available,2020-05-09
-The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-09
-Goosebumps Series,R. L. Stine,Available,2020-05-09
-To Kill a Mockingbird,Harper Lee,Available,2020-05-09

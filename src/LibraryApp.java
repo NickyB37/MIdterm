@@ -26,9 +26,9 @@ public class LibraryApp {
 		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
 		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
 
-		//fillMenu();
-		//updateDate();
-		//whileLoop();
+		// fillMenu();
+		// updateDate();
+		// whileLoop();
 
 	}
 
@@ -112,15 +112,18 @@ public class LibraryApp {
 		}
 	}
 
-	public void lookUpByAuthor(String authorName) {
-//		String authorName = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter an author: ", "[a-zA-z\\s]*");
+	public String lookUpByAuthor(String authorName) {
+
 		List<Book> allBook = helper.readAll();
+		StringBuilder sb = new StringBuilder();
 
 		for (Book b : allBook) {
 			if (b.getAuthor().equalsIgnoreCase(authorName)) {
-				System.out.println(b);
+				sb.append(b);
+				sb.append("\n");
 			}
 		}
+		return sb.toString();
 	}
 
 	public void lookUpByTitle(String titleName) {

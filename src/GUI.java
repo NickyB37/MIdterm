@@ -4,6 +4,7 @@ public class GUI {
 	public static void main(String[] args) {
 		
 		LibraryApp libraryApp = new LibraryApp();
+		//These objects are dependent on the object LibraryApp for functionality
 		DisplayGUI displayGui = new DisplayGUI(libraryApp);
 		SearchByAuthorGUI searchByAuthorGui = new SearchByAuthorGUI(libraryApp);
 		SearchByTitleGUI searchByTitleGui = new SearchByTitleGUI(libraryApp);

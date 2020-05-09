@@ -2,33 +2,38 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class SearchByAuthorGUI extends JFrame{
 	
 	private static final long serialVersionUID = 1L;
 	
-	JPanel jp = new JPanel();
-	JLabel jl = new JLabel();
-	JTextField jt = new JTextField(30);
-	JButton jb = new JButton("Enter");
+	JPanel panel = new JPanel();
+	JLabel authorNameLabel = new JLabel();
+	JTextField authorNameTextField = new JTextField(30);
+	JButton searchAuthorButton = new JButton("Enter");
+	JTextArea bookTextArea = new JTextArea(20, 20);
 	
 	public SearchByAuthorGUI(LibraryApp libraryApp) {
-		jp.setVisible(true);
-		jp.setSize(400, 200);
-		jp.setLayout(null);
+		panel.setVisible(true);
+		panel.setSize(400, 200);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		jp.add(jt);
+		panel.add(authorNameTextField);
 		
-		jp.add(jb);
+		panel.add(searchAuthorButton);
+		panel.add(bookTextArea);
 		
-		jb.addActionListener(event -> {
-			String input = jt.getText();
-			libraryApp.lookUpByAuthor(input);
+		searchAuthorButton.addActionListener(event -> {
+			String input = authorNameTextField.getText();
+			String books = libraryApp.lookUpByAuthor(input);
+			bookTextArea.setText(books);
 		});
-		jp.add(jl);
-		add(jp);
+		
+		
+		panel.add(authorNameLabel);
+		add(panel);
 		
 	}
 

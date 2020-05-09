@@ -31,7 +31,7 @@ public class CheckoutBookGUI extends JDialog {
 			if (libraryApp.checkoutBook(selectedBook)) {
 				JOptionPane.showMessageDialog(this, selectedBook + "  has been successfully checked out!");
 			} else {
-			JOptionPane.showMessageDialog(this, selectedBook + " is not available for checkout.");
+				JOptionPane.showMessageDialog(this, selectedBook + " is not available for checkout.");
 			}
 		});
 		this.setVisible(true);

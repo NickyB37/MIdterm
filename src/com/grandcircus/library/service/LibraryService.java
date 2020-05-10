@@ -1,20 +1,15 @@
 package com.grandcircus.library.service;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-
 import com.grandcircus.library.fileio.BookLineConverter;
 import com.grandcircus.library.fileio.FileHelper;
 import com.grandcircus.library.model.Book;
-import com.grandcircus.library.validator.GrandCircusValidator;
 
 public class LibraryService {
 
-	private Scanner scnr = new Scanner(System.in);
-	private Map<Integer, String> menu = new HashMap<>();
+	private static final String ALPHA_STRING_REGEX = "[a-zA-z\\s]*";
+	
 	private FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	private LocalDate now = LocalDate.now();
 
@@ -106,14 +101,18 @@ public class LibraryService {
 		return isReturnSuccessful;
 	}
 
-	public void addBook() {
+	public boolean addBook(String bookTitle, String bookAuthor) {
+		if(!bookTitle.matches(ALPHA_STRING_REGEX)) {
+			return false;
+		}
+		
+		if(!bookAuthor.matches(ALPHA_STRING_REGEX)) {
+			return false;
+		}
 
-		String authorToAdd = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter the author's name: ",
-				"[a-zA-z\\s]*");
-
-		String titleToAdd = GrandCircusValidator.getStringMatchingRegex(scnr, "Enter the title: ", "[a-zA-z\\s]*");
-
-		helper.append(new Book(titleToAdd, authorToAdd, "Available", now));
+		helper.append(new Book(bookTitle, bookAuthor, "Available", now));
+		
+		return true;
 	}
 
 	public List<Book> getAllBooks() {

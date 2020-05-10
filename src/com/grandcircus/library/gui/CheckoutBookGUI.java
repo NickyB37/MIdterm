@@ -10,22 +10,23 @@ import com.grandcircus.library.model.Book;
 import com.grandcircus.library.service.LibraryService;
 
 public class CheckoutBookGUI extends JDialog {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	public CheckoutBookGUI(LibraryService libraryApp) {
 		JComboBox<Book> bookList = new JComboBox(libraryApp.getAllBooks().toArray());
 		JButton checkoutBookButton = new JButton("Checkout book");
-		
+
 		this.setSize(800, 100);
 		setModal(true);
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		
+
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 		this.add(bookList);
 		this.add(checkoutBookButton);
-		
+		this.setLocationRelativeTo(null);
+
 		checkoutBookButton.addActionListener(event -> {
 			Book selectedBook = (Book) bookList.getSelectedItem();
 			if (libraryApp.checkoutBook(selectedBook)) {

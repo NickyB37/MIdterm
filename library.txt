@@ -10,3 +10,4 @@ Never Die Alone,Donald Goines,Available,2020-05-09
 The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-09
 Goosebumps Series,R. L. Stine,Available,2020-05-09
 To Kill a Mockingbird,Harper Lee,Available,2020-05-09
+Art of the Deal,Donald Trump,Available,2020-05-09

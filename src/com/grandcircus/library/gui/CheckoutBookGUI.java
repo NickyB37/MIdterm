@@ -19,6 +19,7 @@ public class CheckoutBookGUI extends JDialog {
 
 		this.setSize(800, 100);
 		setModal(true);
+		this.setTitle("Chechout a Book");
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 

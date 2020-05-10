@@ -22,6 +22,7 @@ public class DonateBookGUI extends JDialog {
 		
 		this.setSize(400, 200);
 		setModal(true);
+		this.setTitle("Donate a Book");
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		

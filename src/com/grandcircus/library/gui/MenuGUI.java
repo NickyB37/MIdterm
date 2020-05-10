@@ -1,5 +1,6 @@
 package com.grandcircus.library.gui;
 
+import java.awt.Dimension;
 import java.awt.GridLayout;
 
 import javax.swing.*;
@@ -21,7 +22,7 @@ public class MenuGUI extends JFrame {
 
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-		JButton display = new JButton("Display books");// creating instance of JButton
+		JButton display = new JButton(String.valueOf("Display books"));
 		JButton searchByAuthor = new JButton("Search by author");
 		JButton searchByTitle = new JButton("Search by title");
 		JButton checkoutBook = new JButton("Checkout book");
@@ -30,7 +31,22 @@ public class MenuGUI extends JFrame {
 		JButton exit = new JButton("Exit");
 
 		// 0 in the parameter means unlimited rows
-		this.setLayout(new GridLayout(0, 1));
+		this.setLayout(new GridLayout(7, 1));
+		
+		display.setPreferredSize(new Dimension(40, 40));
+		display.setFont(null);
+		searchByAuthor.setPreferredSize(new Dimension(40, 40));
+		searchByAuthor.setFont(null);
+		searchByTitle.setPreferredSize(new Dimension(40, 40));
+		searchByTitle.setFont(null);
+		checkoutBook.setPreferredSize(new Dimension(40, 40));
+		checkoutBook.setFont(null);
+		returnBook.setPreferredSize(new Dimension(40, 40));
+		returnBook.setFont(null);
+		donateBook.setPreferredSize(new Dimension(40, 40));
+		donateBook.setFont(null);
+		exit.setPreferredSize(new Dimension(40, 40));
+		exit.setFont(null);
 
 		this.add(display);
 		this.add(searchByAuthor);

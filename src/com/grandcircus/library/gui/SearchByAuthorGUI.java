@@ -21,6 +21,7 @@ public class SearchByAuthorGUI extends JDialog {
 	public SearchByAuthorGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
 		setModal(true);
+		this.setTitle("Find a Book by Author");
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
@@ -28,7 +29,6 @@ public class SearchByAuthorGUI extends JDialog {
 		
 		this.add(authorNameLabel);
 		this.add(authorNameTextField);
-		
 		this.add(searchAuthorButton);
 		this.add(bookTextArea);
 		

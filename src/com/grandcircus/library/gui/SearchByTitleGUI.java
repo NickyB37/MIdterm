@@ -21,12 +21,14 @@ public class SearchByTitleGUI extends JDialog {
 	public SearchByTitleGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
 		setModal(true);
+		this.setTitle("Find a Book by Title");
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 
 		this.add(titleNameLabel);
+		this.add(titleNameTextField);
 		this.add(titleAuthorButton);
 		this.add(bookTextArea);
 

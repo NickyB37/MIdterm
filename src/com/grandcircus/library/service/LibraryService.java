@@ -14,23 +14,24 @@ public class LibraryService {
 	private LocalDate now = LocalDate.now();
 
 	public LibraryService() {
-//		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
-//		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
-//		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
-//		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
-//		helper.append(new Book("Pride and Pregudice", "Jane Austen", "Available", now));
-//		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
-//		helper.append(new Book("1984", "George Orwell", "Available", now));
-//		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
-//		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
-//		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
-//		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
-//		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
+		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
+		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
+		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
+		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
+		helper.append(new Book("Pride and Pregudice", "Jane Austen", "Available", now));
+		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
+		helper.append(new Book("1984", "George Orwell", "Available", now));
+		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
+		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
+		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
+		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
+		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
 	}
 
 	public String listBooks() {
 		List<Book> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
+		
 		for (Book b : allBook) {
 			sb.append(b);
 			sb.append("\n");
@@ -39,7 +40,6 @@ public class LibraryService {
 	}
 
 	public String lookUpByAuthor(String authorName) {
-
 		List<Book> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
 
@@ -68,6 +68,7 @@ public class LibraryService {
 	public boolean checkoutBook(Book book) {
 		List<Book> allBook = helper.readAll();
 		boolean isCheckoutSuccessful = false;
+		
 		for (Book b : allBook) {
 			if (b.getTitle().equalsIgnoreCase(book.getTitle())) {
 				Book userChoice = b;
@@ -102,6 +103,7 @@ public class LibraryService {
 	}
 
 	public boolean addBook(String bookTitle, String bookAuthor) {
+		
 		if(!bookTitle.matches(ALPHA_STRING_REGEX)) {
 			return false;
 		}

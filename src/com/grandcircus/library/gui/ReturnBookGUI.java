@@ -19,6 +19,7 @@ public class ReturnBookGUI extends JDialog {
 
 		this.setSize(800, 100);
 		setModal(true);
+		this.setTitle("Return a Book");
 
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 

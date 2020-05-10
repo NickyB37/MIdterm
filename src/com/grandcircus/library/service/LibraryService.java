@@ -6,6 +6,11 @@ import com.grandcircus.library.fileio.BookLineConverter;
 import com.grandcircus.library.fileio.FileHelper;
 import com.grandcircus.library.model.Book;
 
+/**
+ * 
+ * Contains all functionality to run the library.
+ *
+ */
 public class LibraryService {
 
 	private static final String ALPHA_STRING_REGEX = "[a-zA-z\\s]*";
@@ -13,6 +18,9 @@ public class LibraryService {
 	private FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
 	private LocalDate now = LocalDate.now();
 
+	/**
+	 * Creates a new library service.
+	 */
 	public LibraryService() {
 //		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
 //		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
@@ -28,6 +36,9 @@ public class LibraryService {
 //		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
 	}
 
+	/**
+	 * @return All the books that are in the library.
+	 */
 	public String listBooks() {
 		List<Book> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
@@ -39,6 +50,10 @@ public class LibraryService {
 		return sb.toString();
 	}
 
+	/**
+	 * @param authorName The author to search by.
+	 * @return The book(s) that the given author has written that are in the library.
+	 */
 	public String lookUpByAuthor(String authorName) {
 		List<Book> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
@@ -52,6 +67,10 @@ public class LibraryService {
 		return sb.toString();
 	}
 
+	/**
+	 * @param titleName The title of book to search by.
+	 * @return The book that the given title matches in the library.
+	 */
 	public String lookUpByTitle(String titleName) {
 		List<Book> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
@@ -65,6 +84,10 @@ public class LibraryService {
 		return sb.toString();
 	}
 
+	/**
+	 * @param book The book that the user would like checkout.
+	 * @return True if the book was successfully checked out. 
+	 */
 	public boolean checkoutBook(Book book) {
 		List<Book> allBook = helper.readAll();
 		boolean isCheckoutSuccessful = false;
@@ -83,7 +106,12 @@ public class LibraryService {
 		helper.rewrite(allBook);
 		return isCheckoutSuccessful;
 	}
-
+	
+	/**
+	 * 
+	 * @param book The book that the user would like to return.
+	 * @return True if the book was successfully returned.
+	 */
 	public boolean bookReturn(Book book) {
 		List<Book> toAllBook = helper.readAll();
 		boolean isReturnSuccessful = false;
@@ -102,6 +130,11 @@ public class LibraryService {
 		return isReturnSuccessful;
 	}
 
+	/**
+	 * @param bookTitle The title of a book the user would like to donate.
+	 * @param bookAuthor The author of a book the use would like to donate.
+	 * @return True if the title and author entered by the user was successfully added to the list of books in the library.
+	 */
 	public boolean addBook(String bookTitle, String bookAuthor) {
 		
 		if(!bookTitle.matches(ALPHA_STRING_REGEX)) {

@@ -2,7 +2,11 @@ package com.grandcircus.library.model;
 
 import java.time.LocalDate;
 
-
+/**
+ * 
+ * Models a library book.
+ *
+ */
 public class Book {
 	protected String title;
 	protected String author;

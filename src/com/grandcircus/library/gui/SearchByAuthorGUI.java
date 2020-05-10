@@ -23,6 +23,10 @@ public class SearchByAuthorGUI extends JDialog {
 	JButton searchAuthorButton = new JButton("Enter");
 	JTextArea bookTextArea = new JTextArea(20, 75);
 	
+	/**
+	 * Displays the SearchByAuthorGUI.
+	 * @param libraryApp An instance of the library.
+	 */
 	public SearchByAuthorGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
 		this.setModal(true);

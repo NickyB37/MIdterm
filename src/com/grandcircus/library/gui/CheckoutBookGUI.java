@@ -18,6 +18,10 @@ public class CheckoutBookGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Displays the CheckoutBookGUI.
+	 * @param libraryApp An instance of the library.
+	 */
 	public CheckoutBookGUI(LibraryService libraryApp) {
 		JComboBox<Book> bookList = new JComboBox(libraryApp.getAllBooks().toArray());
 		JButton checkoutBookButton = new JButton("Checkout book");

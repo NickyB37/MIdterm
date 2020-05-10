@@ -4,6 +4,11 @@ import java.time.LocalDate;
 
 import com.grandcircus.library.model.Book;
 
+/**
+ * 
+ * Converts a string to a book model.
+ *
+ */
 public class BookLineConverter implements LineConverter<Book>{
 
 	@Override

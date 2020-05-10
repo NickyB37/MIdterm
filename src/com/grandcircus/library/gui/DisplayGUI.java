@@ -18,6 +18,10 @@ public class DisplayGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 	
+	/**
+	 * Displays the DisplayGUI.
+	 * @param libraryApp An instance of the library.
+	 */
 	public DisplayGUI(LibraryService libraryApp) {
 		JScrollPane scrollPane = createBookDataTable(libraryApp);
 		

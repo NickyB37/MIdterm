@@ -7,10 +7,16 @@ import javax.swing.*;
 
 import com.grandcircus.library.service.LibraryService;
 
+/**
+ * Displays menu GUI
+ */
 public class MenuGUI extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Displays the MenuGUI.
+	 */
 	public MenuGUI() {
         try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

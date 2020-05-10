@@ -18,6 +18,10 @@ public class ReturnBookGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Displays the ReturnBookGUI.
+	 * @param libraryApp An instance of the library.
+	 */
 	public ReturnBookGUI(LibraryService libraryApp) {
 		JComboBox bookList = new JComboBox(libraryApp.getAllBooks().toArray());
 		JButton returnBookButton = new JButton("Return book");

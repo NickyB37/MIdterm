@@ -23,6 +23,10 @@ public class SearchByTitleGUI extends JDialog {
 	JButton titleAuthorButton = new JButton("Enter");
 	JTextArea bookTextArea = new JTextArea(20, 75);
 
+	/**
+	 * Displays the SearchByTitleGUI.
+	 * @param libraryApp An instance of the library.
+	 */
 	public SearchByTitleGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
 		this.setModal(true);

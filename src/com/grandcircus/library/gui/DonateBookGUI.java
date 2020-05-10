@@ -18,6 +18,10 @@ public class DonateBookGUI extends JDialog {
 	
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * Displays the DonateBookGUI.
+	 * @param libraryApp An instance of the library.
+	 */
 	public DonateBookGUI(LibraryService libraryApp) {
 		JLabel authorNameLabel = new JLabel("Enter the authors name of the book you would like to donate");
 		JTextField authorNameTextField = new JTextField(30);

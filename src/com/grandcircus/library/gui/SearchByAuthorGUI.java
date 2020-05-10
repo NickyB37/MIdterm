@@ -10,9 +10,7 @@ import javax.swing.JTextField;
 import com.grandcircus.library.service.LibraryService;
 
 /**
- * 
  * Provides a GUI for the user to search for a book by author.
- *
  */
 public class SearchByAuthorGUI extends JDialog {
 	

@@ -7,9 +7,7 @@ import com.grandcircus.library.fileio.FileHelper;
 import com.grandcircus.library.model.Book;
 
 /**
- * 
  * Contains all functionality to run the library.
- *
  */
 public class LibraryService {
 

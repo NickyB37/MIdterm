@@ -10,9 +10,7 @@ import javax.swing.JTextField;
 import com.grandcircus.library.service.LibraryService;
 
 /**
- * 
  * Provides a GUI for the user to find a book by its title.
- *
  */
 public class SearchByTitleGUI extends JDialog {
 

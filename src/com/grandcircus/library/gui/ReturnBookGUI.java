@@ -10,9 +10,7 @@ import com.grandcircus.library.model.Book;
 import com.grandcircus.library.service.LibraryService;
 
 /**
- * 
  * Provides a GUI for the user to return a book to the library.
- *
  */
 public class ReturnBookGUI extends JDialog {
 

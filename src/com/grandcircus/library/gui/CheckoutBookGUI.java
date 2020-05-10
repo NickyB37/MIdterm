@@ -10,9 +10,7 @@ import com.grandcircus.library.model.Book;
 import com.grandcircus.library.service.LibraryService;
 
 /**
- * 
- * Provides a GUI for the user to checkout a book. 
- *
+ * Provides a GUI for the user to checkout a book.
  */
 public class CheckoutBookGUI extends JDialog {
 

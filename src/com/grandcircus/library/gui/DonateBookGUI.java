@@ -10,12 +10,10 @@ import javax.swing.JTextField;
 import com.grandcircus.library.service.LibraryService;
 
 /**
- * 
  * Provides a GUI for the user to donate a book to the library.
- *
  */
 public class DonateBookGUI extends JDialog {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -28,27 +26,27 @@ public class DonateBookGUI extends JDialog {
 		JLabel titleNameLabel = new JLabel("Enter the title of the book you would like to donate");
 		JTextField titleNameTextField = new JTextField(30);
 		JButton donateBookButton = new JButton("Add book");
-		
+
 		this.setSize(400, 200);
 		this.setModal(true);
 		this.setTitle("Donate a Book");
 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		
+
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
-		
+
 		this.add(authorNameLabel);
 		this.add(authorNameTextField);
 		this.add(titleNameLabel);
 		this.add(titleNameTextField);
 		this.add(donateBookButton);
 		this.setLocationRelativeTo(null);
-		
+
 		donateBookButton.addActionListener(event -> {
 			String authorName = authorNameTextField.getText();
 			String titleName = titleNameTextField.getText();
-			
-			if(libraryApp.addBook(titleName, authorName)) {
+
+			if (libraryApp.addBook(titleName, authorName)) {
 				JOptionPane.showMessageDialog(this, "Thank you for your donation!");
 			} else {
 				JOptionPane.showMessageDialog(this, "Please check your author name and title.");

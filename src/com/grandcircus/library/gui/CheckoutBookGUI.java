@@ -18,10 +18,10 @@ public class CheckoutBookGUI extends JDialog {
 		JButton checkoutBookButton = new JButton("Checkout book");
 
 		this.setSize(800, 100);
-		setModal(true);
+		this.setModal(true);
 		this.setTitle("Chechout a Book");
 
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 		this.add(bookList);

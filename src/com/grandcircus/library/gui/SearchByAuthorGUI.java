@@ -20,10 +20,10 @@ public class SearchByAuthorGUI extends JDialog {
 	
 	public SearchByAuthorGUI(LibraryService libraryApp) {
 		this.setSize(400, 200);
-		setModal(true);
+		this.setModal(true);
 		this.setTitle("Find a Book by Author");
 
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 		
@@ -41,6 +41,6 @@ public class SearchByAuthorGUI extends JDialog {
 			bookTextArea.setText(books);
 		});
 		
-		setVisible(true);
+		this.setVisible(true);
 	}
 }

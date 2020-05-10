@@ -21,10 +21,10 @@ public class DonateBookGUI extends JDialog {
 		JButton donateBookButton = new JButton("Add book");
 		
 		this.setSize(400, 200);
-		setModal(true);
+		this.setModal(true);
 		this.setTitle("Donate a Book");
 
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 		

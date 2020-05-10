@@ -18,6 +18,7 @@ public class DisplayGUI extends JDialog {
 
 	/**
 	 * Displays the DisplayGUI.
+	 * 
 	 * @param libraryApp An instance of the library.
 	 */
 	public DisplayGUI(LibraryService libraryApp) {

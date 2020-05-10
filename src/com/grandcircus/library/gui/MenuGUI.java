@@ -1,8 +1,6 @@
 package com.grandcircus.library.gui;
 
-import java.awt.Dimension;
 import java.awt.GridLayout;
-
 import javax.swing.*;
 
 import com.grandcircus.library.service.LibraryService;
@@ -12,12 +10,19 @@ import com.grandcircus.library.service.LibraryService;
  */
 public class MenuGUI extends JFrame {
 
+	static {
+		// Allows the GUI to display with a reasonably large font on high DPI displays.
+		// This property must be set before any Swing components are initialized.
+		
+		System.setProperty("sun.java2d.uiScale", "2.5");
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Displays the MenuGUI.
 	 */
-	public MenuGUI() {
+	public MenuGUI() {		
         try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
@@ -38,21 +43,6 @@ public class MenuGUI extends JFrame {
 
 		// 0 in the parameter means unlimited rows
 		this.setLayout(new GridLayout(7, 1));
-		
-		display.setPreferredSize(new Dimension(40, 40));
-		display.setFont(null);
-		searchByAuthor.setPreferredSize(new Dimension(40, 40));
-		searchByAuthor.setFont(null);
-		searchByTitle.setPreferredSize(new Dimension(40, 40));
-		searchByTitle.setFont(null);
-		checkoutBook.setPreferredSize(new Dimension(40, 40));
-		checkoutBook.setFont(null);
-		returnBook.setPreferredSize(new Dimension(40, 40));
-		returnBook.setFont(null);
-		donateBook.setPreferredSize(new Dimension(40, 40));
-		donateBook.setFont(null);
-		exit.setPreferredSize(new Dimension(40, 40));
-		exit.setFont(null);
 
 		this.add(display);
 		this.add(searchByAuthor);

@@ -9,6 +9,11 @@ import javax.swing.JTextField;
 
 import com.grandcircus.library.service.LibraryService;
 
+/**
+ * 
+ * Provides a GUI for the user to donate a book to the library.
+ *
+ */
 public class DonateBookGUI extends JDialog {
 	
 	private static final long serialVersionUID = 1L;

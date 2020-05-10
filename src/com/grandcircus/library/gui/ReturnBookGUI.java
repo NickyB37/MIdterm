@@ -9,6 +9,11 @@ import javax.swing.JOptionPane;
 import com.grandcircus.library.model.Book;
 import com.grandcircus.library.service.LibraryService;
 
+/**
+ * 
+ * Provides a GUI for the user to return a book to the library.
+ *
+ */
 public class ReturnBookGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;
@@ -18,10 +23,10 @@ public class ReturnBookGUI extends JDialog {
 		JButton returnBookButton = new JButton("Return book");
 
 		this.setSize(800, 100);
-		setModal(true);
+		this.setModal(true);
 		this.setTitle("Return a Book");
 
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 		this.add(bookList);

@@ -9,6 +9,11 @@ import javax.swing.JTable;
 import com.grandcircus.library.model.Book;
 import com.grandcircus.library.service.LibraryService;
 
+/**
+ * 
+ * Provides a GUI for the user to list books in the library.
+ *
+ */
 public class DisplayGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;

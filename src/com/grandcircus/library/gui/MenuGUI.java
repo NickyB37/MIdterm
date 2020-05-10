@@ -11,6 +11,12 @@ public class MenuGUI extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	public MenuGUI() {
+        try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+			// Don't care if the theme can't be changed
+		}
+		
 		LibraryService libraryApp = new LibraryService();
 
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

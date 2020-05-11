@@ -43,7 +43,7 @@ public class SearchByTitleGUI extends JDialog {
 		this.setLocationRelativeTo(null);
 
 		titleAuthorButton.addActionListener(event -> {
-			String input = titleNameTextField.getText();
+			String input = titleNameTextField.getText().toLowerCase();
 			String books = libraryApp.lookUpByTitle(input);
 			bookTextArea.setText(books);
 		});

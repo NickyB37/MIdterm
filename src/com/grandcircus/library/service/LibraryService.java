@@ -96,7 +96,7 @@ public class LibraryService {
 		StringBuilder sb = new StringBuilder();
 
 		for (Media b : allBook) {
-			if (b.getTitle().equalsIgnoreCase(titleName)) {
+			if (b.getTitle().toLowerCase().contains(titleName)) {
 				sb.append(b);
 				sb.append("\n");
 			}

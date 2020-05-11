@@ -16,7 +16,7 @@ public class SearchByAuthorGUI extends JDialog {
 	
 	private static final long serialVersionUID = 1L;
 
-	JLabel authorNameLabel = new JLabel("Enter author name from list:");
+	JLabel authorNameLabel = new JLabel("Enter author name from list");
 	JTextField authorNameTextField = new JTextField(30);
 	JButton searchAuthorButton = new JButton("Enter");
 	JTextArea bookTextArea = new JTextArea(20, 75);

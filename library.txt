@@ -5,7 +5,7 @@ Tail of Two Cites,Charles Dickens,Available,2020-05-10
 Pride and Pregudice,Jane Austen,Available,2020-05-10
 From the Earth to the Moon,Jules Verne,Available,2020-05-10
 1984,George Orwell,Available,2020-05-10
-Animal Farm,George Orwell,Available,2020-05-10
+Animal Farm,George Orwell,Available,2020-05-24
 Never Die Alone,Donald Goines,Available,2020-05-10
 The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-10
 Goosebumps Series,R. L. Stine,Available,2020-05-10

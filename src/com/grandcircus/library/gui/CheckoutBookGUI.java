@@ -38,9 +38,9 @@ public class CheckoutBookGUI extends JDialog {
 		checkoutBookButton.addActionListener(event -> {
 			Book selectedBook = (Book) bookList.getSelectedItem();
 			if (libraryApp.checkoutBook(selectedBook)) {
-				JOptionPane.showMessageDialog(this, selectedBook + "  has been successfully checked out!");
+				JOptionPane.showMessageDialog(this, selectedBook + "  Has been successfully checked out!");
 			} else {
-				JOptionPane.showMessageDialog(this, selectedBook + " is not available for checkout.");
+				JOptionPane.showMessageDialog(this, selectedBook + " Is not available for checkout.");
 			}
 		});
 		this.setVisible(true);

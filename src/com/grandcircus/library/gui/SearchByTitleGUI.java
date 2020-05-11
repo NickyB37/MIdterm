@@ -16,7 +16,7 @@ public class SearchByTitleGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
-	JLabel titleNameLabel = new JLabel("Enter title of a book from list:");
+	JLabel titleNameLabel = new JLabel("Enter title of a book from list");
 	JTextField titleNameTextField = new JTextField(30);
 	JButton titleAuthorButton = new JButton("Enter");
 	JTextArea bookTextArea = new JTextArea(20, 75);

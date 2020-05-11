@@ -119,6 +119,7 @@ public class LibraryService {
 				Book userChoice = b;
 				if (userChoice.getStatus().startsWith("C")) {
 					b.setStatus("Available");
+					b.setLocalDate(now);
 					isReturnSuccessful = true;
 					break;
 				}

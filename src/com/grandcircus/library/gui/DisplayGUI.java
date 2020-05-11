@@ -27,7 +27,7 @@ public class DisplayGUI extends JDialog {
 
 		this.setSize(400, 200);
 		this.setModal(true);
-		this.setTitle("List of Books");
+		this.setTitle("List of Media");
 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -40,8 +40,8 @@ public class DisplayGUI extends JDialog {
 	}
 
 	private JScrollPane createBookDataTable(LibraryService libraryApp) {
-		String[] columnNames = { "Title", "Author/Director","Runtime", "Status", "Date" };
-		
+		String[] columnNames = { "Title", "Author/Director", "Runtime", "Status", "Date" };
+
 		List<Media> books = libraryApp.getAllBooks();
 
 		Object[][] bookData = new Object[books.size()][];
@@ -50,11 +50,11 @@ public class DisplayGUI extends JDialog {
 
 			Media media = books.get(i);
 			if (media instanceof Book) {
-				bookData[i] = new Object[] { media.getTitle(), ((Book) media).getAuthor(), media.getRunTime(),media.getStatus(),
-						media.getLocalDate() };
+				bookData[i] = new Object[] { media.getTitle(), ((Book) media).getAuthor(), media.getRunTime(),
+						media.getStatus(), media.getLocalDate() };
 			} else {
-				bookData[i] = new Object[] { media.getTitle(),((Movie) media).getDirector(),
-						media.getRunTime(),media.getStatus(),media.getLocalDate().toString() };
+				bookData[i] = new Object[] { media.getTitle(), ((Movie) media).getDirector(), media.getRunTime(),
+						media.getStatus(), media.getLocalDate().toString() };
 			}
 		}
 
@@ -64,5 +64,4 @@ public class DisplayGUI extends JDialog {
 		JScrollPane scrollPane = new JScrollPane(table);
 		return scrollPane;
 	}
-
 }

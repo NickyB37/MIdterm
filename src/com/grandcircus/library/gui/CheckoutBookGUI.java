@@ -23,11 +23,11 @@ public class CheckoutBookGUI extends JDialog {
 	 */
 	public CheckoutBookGUI(LibraryService libraryApp) {
 		JComboBox<Book> bookList = new JComboBox(libraryApp.getAllBooks().toArray());
-		JButton checkoutBookButton = new JButton("Checkout book");
+		JButton checkoutBookButton = new JButton("Checkout");
 
 		this.setSize(800, 100);
 		this.setModal(true);
-		this.setTitle("Chechout a Book");
+		this.setTitle("Chechout Media");
 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -46,5 +46,4 @@ public class CheckoutBookGUI extends JDialog {
 		});
 		this.setVisible(true);
 	}
-
 }

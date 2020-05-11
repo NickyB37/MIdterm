@@ -6,7 +6,6 @@ import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import com.grandcircus.library.model.Book;
 import com.grandcircus.library.model.Media;
 import com.grandcircus.library.service.LibraryService;
 
@@ -24,11 +23,11 @@ public class ReturnBookGUI extends JDialog {
 	 */
 	public ReturnBookGUI(LibraryService libraryApp) {
 		JComboBox bookList = new JComboBox(libraryApp.getAllBooks().toArray());
-		JButton returnBookButton = new JButton("Return book");
+		JButton returnBookButton = new JButton("Return");
 
 		this.setSize(800, 100);
 		this.setModal(true);
-		this.setTitle("Return a Book");
+		this.setTitle("Return Media");
 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -48,5 +47,4 @@ public class ReturnBookGUI extends JDialog {
 
 		this.setVisible(true);
 	}
-
 }

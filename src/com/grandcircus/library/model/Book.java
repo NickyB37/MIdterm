@@ -9,8 +9,8 @@ public class Book extends Media{
 
 protected String author;
 	
-	public Book(String title, String author,String runTime, String status, LocalDate localDate) {
-		super(title, runTime,status,localDate);
+	public Book(String title, String author, String runTime, String status, LocalDate localDate) {
+		super(title, runTime, status, localDate);
 		this.author = author;
 
 	}
@@ -43,6 +43,4 @@ protected String author;
 	public String toString() {
 		return String.format("Title: " + title + " Author: " + author + "Run Time:" + runTime + " Status: " + status + " Date: " + localDate.toString());
 	}
-	
-	
 }

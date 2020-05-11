@@ -13,7 +13,7 @@ public class MenuGUI extends JFrame {
 	static {
 		// Allows the GUI to display with a reasonably large font on high DPI displays.
 		// This property must be set before any Swing components are initialized.
-		
+
 		System.setProperty("sun.java2d.uiScale", "2.5");
 	}
 
@@ -22,26 +22,27 @@ public class MenuGUI extends JFrame {
 	/**
 	 * Displays the MenuGUI.
 	 */
-	public MenuGUI() {		
-        try {
+	public MenuGUI() {
+		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (Exception e) {
 			// Don't care if the theme can't be changed
 		}
-		
+
 		LibraryService libraryApp = new LibraryService();
 
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
-		JButton display = new JButton(String.valueOf("Display books"));
-		JButton searchByAuthor = new JButton("Search by author");
-		JButton searchByTitle = new JButton("Search by title");
-		JButton checkoutBook = new JButton("Checkout book");
-		JButton returnBook = new JButton("Return book");
-		JButton donateBook = new JButton("Donate a book");
+		JButton display = new JButton(String.valueOf("Display Media"));
+		JButton searchByAuthor = new JButton("Search by Author/Director");
+		JButton searchByTitle = new JButton("Search by Title");
+		JButton checkoutBook = new JButton("Checkout an Item");
+		JButton returnBook = new JButton("Return an Item");
+		JButton donateBook = new JButton("Donate a Book");
+		JButton donateMovie = new JButton("Donate a Movie");
 		JButton exit = new JButton("Exit");
 
-		this.setLayout(new GridLayout(7, 1));
+		this.setLayout(new GridLayout(8, 1));
 
 		this.add(display);
 		this.add(searchByAuthor);
@@ -49,6 +50,7 @@ public class MenuGUI extends JFrame {
 		this.add(checkoutBook);
 		this.add(returnBook);
 		this.add(donateBook);
+		this.add(donateMovie);
 		this.add(exit);
 
 		this.pack();
@@ -79,6 +81,10 @@ public class MenuGUI extends JFrame {
 
 		donateBook.addActionListener(event -> {
 			new DonateBookGUI(libraryApp);
+		});
+
+		donateMovie.addActionListener(event -> {
+			new DonateMovieGUI(libraryApp);
 		});
 
 		exit.addActionListener(event -> {

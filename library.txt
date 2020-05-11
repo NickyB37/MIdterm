@@ -10,4 +10,87 @@ Never Die Alone,Donald Goines,N/A,Available,2020-05-11
 The Adventures of Huckleberry Finn,Mark Twain,N/A,Available,2020-05-11
 Goosebumps Series,R. L. Stine,N/A,Available,2020-05-11
 To Kill a Mockingbird,Harper Lee,N/A,Available,2020-05-11
-Avatar,James Cameron,3hrs,Checked out,2020-05-25
+Avatar,James Cameron,2hrs 42mins,Available,2020-05-11
+Jaws,Steven Spielburg,2hrs 10mins,Available,2020-05-11
+Pulp Fiction,Quenton Tarantino,2hrs 58mins,Available,2020-05-11
+The Grand Budapest Hotel,Wes Anderson,1hrs 40mins,Available,2020-05-11
+Mad Max,George Miller,2hrs 5min,Available,2020-05-11
+Forest Gump,Robert Zemeckis,2hrs 22mins,Available,2020-05-11
+Avengers,Joss Wheldon,2hrs 23mins,Available,2020-05-11
+Titanic,James Cameron,3hrs 15mins,Available,2020-05-11
+Goodfellas,Martin Scorsese,2hrs 28mins,Available,2020-05-11
+The Godfather,Francis Coppola,2hrs 58mins,Available,2020-05-11
+The Godfather 2,Francis Coppola,3hrs 22 mins,Available,2020-05-11
+The Godfather 3,Francis Coppola,2hrs 50mins,Available,2020-05-11
+The Great Gatsby,F. Scott Fitzgerald,N/A,Available,2020-05-11
+The Catcher in the Rye,J. D. Salinger,N/A,Available,2020-05-11
+Brave New World,Aldous Huxley,N/A,Available,2020-05-11
+Tail of Two Cites,Charles Dickens,N/A,Available,2020-05-11
+Pride and Pregudice,Jane Austen,N/A,Available,2020-05-11
+From the Earth to the Moon,Jules Verne,N/A,Available,2020-05-11
+1984,George Orwell,N/A,Available,2020-05-11
+Animal Farm,George Orwell,N/A,Available,2020-05-11
+Never Die Alone,Donald Goines,N/A,Available,2020-05-11
+The Adventures of Huckleberry Finn,Mark Twain,N/A,Available,2020-05-11
+Goosebumps Series,R. L. Stine,N/A,Available,2020-05-11
+To Kill a Mockingbird,Harper Lee,N/A,Available,2020-05-11
+Avatar,James Cameron,2hrs 42mins,Available,2020-05-11
+Jaws,Steven Spielburg,2hrs 10mins,Available,2020-05-11
+Pulp Fiction,Quenton Tarantino,2hrs 58mins,Available,2020-05-11
+The Grand Budapest Hotel,Wes Anderson,1hrs 40mins,Available,2020-05-11
+Mad Max,George Miller,2hrs 5min,Available,2020-05-11
+Forest Gump,Robert Zemeckis,2hrs 22mins,Available,2020-05-11
+Avengers,Joss Wheldon,2hrs 23mins,Available,2020-05-11
+Titanic,James Cameron,3hrs 15mins,Available,2020-05-11
+Goodfellas,Martin Scorsese,2hrs 28mins,Available,2020-05-11
+The Godfather,Francis Coppola,2hrs 58mins,Available,2020-05-11
+The Godfather 2,Francis Coppola,3hrs 22 mins,Available,2020-05-11
+The Godfather 3,Francis Coppola,2hrs 50mins,Available,2020-05-11
+The Great Gatsby,F. Scott Fitzgerald,N/A,Available,2020-05-11
+The Catcher in the Rye,J. D. Salinger,N/A,Available,2020-05-11
+Brave New World,Aldous Huxley,N/A,Available,2020-05-11
+Tail of Two Cites,Charles Dickens,N/A,Available,2020-05-11
+Pride and Pregudice,Jane Austen,N/A,Available,2020-05-11
+From the Earth to the Moon,Jules Verne,N/A,Available,2020-05-11
+1984,George Orwell,N/A,Available,2020-05-11
+Animal Farm,George Orwell,N/A,Available,2020-05-11
+Never Die Alone,Donald Goines,N/A,Available,2020-05-11
+The Adventures of Huckleberry Finn,Mark Twain,N/A,Available,2020-05-11
+Goosebumps Series,R. L. Stine,N/A,Available,2020-05-11
+To Kill a Mockingbird,Harper Lee,N/A,Available,2020-05-11
+Avatar,James Cameron,2hrs 42mins,Available,2020-05-11
+Jaws,Steven Spielburg,2hrs 10mins,Available,2020-05-11
+Pulp Fiction,Quenton Tarantino,2hrs 58mins,Available,2020-05-11
+The Grand Budapest Hotel,Wes Anderson,1hrs 40mins,Available,2020-05-11
+Mad Max,George Miller,2hrs 5min,Available,2020-05-11
+Forest Gump,Robert Zemeckis,2hrs 22mins,Available,2020-05-11
+Avengers,Joss Wheldon,2hrs 23mins,Available,2020-05-11
+Titanic,James Cameron,3hrs 15mins,Available,2020-05-11
+Goodfellas,Martin Scorsese,2hrs 28mins,Available,2020-05-11
+The Godfather,Francis Coppola,2hrs 58mins,Available,2020-05-11
+The Godfather 2,Francis Coppola,3hrs 22 mins,Available,2020-05-11
+The Godfather 3,Francis Coppola,2hrs 50mins,Available,2020-05-11
+The Great Gatsby,F. Scott Fitzgerald,N/A,Available,2020-05-11
+The Catcher in the Rye,J. D. Salinger,N/A,Available,2020-05-11
+Brave New World,Aldous Huxley,N/A,Available,2020-05-11
+Tail of Two Cites,Charles Dickens,N/A,Available,2020-05-11
+Pride and Pregudice,Jane Austen,N/A,Available,2020-05-11
+From the Earth to the Moon,Jules Verne,N/A,Available,2020-05-11
+1984,George Orwell,N/A,Available,2020-05-11
+Animal Farm,George Orwell,N/A,Available,2020-05-11
+Never Die Alone,Donald Goines,N/A,Available,2020-05-11
+The Adventures of Huckleberry Finn,Mark Twain,N/A,Available,2020-05-11
+Goosebumps Series,R. L. Stine,N/A,Available,2020-05-11
+To Kill a Mockingbird,Harper Lee,N/A,Available,2020-05-11
+Avatar,James Cameron,2hrs 42mins,Available,2020-05-11
+Jaws,Steven Spielburg,2hrs 10mins,Available,2020-05-11
+Pulp Fiction,Quenton Tarantino,2hrs 58mins,Available,2020-05-11
+The Grand Budapest Hotel,Wes Anderson,1hrs 40mins,Available,2020-05-11
+Mad Max,George Miller,2hrs 5min,Available,2020-05-11
+Forest Gump,Robert Zemeckis,2hrs 22mins,Available,2020-05-11
+Avengers,Joss Wheldon,2hrs 23mins,Available,2020-05-11
+Titanic,James Cameron,3hrs 15mins,Available,2020-05-11
+Goodfellas,Martin Scorsese,2hrs 28mins,Available,2020-05-11
+The Godfather,Francis Coppola,2hrs 58mins,Available,2020-05-11
+The Godfather 2,Francis Coppola,3hrs 22 mins,Available,2020-05-11
+The Godfather 3,Francis Coppola,2hrs 50mins,Available,2020-05-11

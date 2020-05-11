@@ -10,43 +10,48 @@ import javax.swing.JTextField;
 import com.grandcircus.library.service.LibraryService;
 
 /**
- * Provides a GUI for the user to donate a book to the library.
+ * Provides a GUI for the user to donate a movie to the library.
  */
-public class DonateBookGUI extends JDialog {
+public class DonateMovieGUI extends JDialog {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * Displays the DonateBookGUI.
+	 * Displays the DonateMovieGUI.
 	 * @param libraryApp An instance of the library.
 	 */
-	public DonateBookGUI(LibraryService libraryApp) {
-		JLabel authorNameLabel = new JLabel("Enter the authors name of the book you would like to donate");
-		JTextField authorNameTextField = new JTextField(30);
-		JLabel titleNameLabel = new JLabel("Enter the title of the book you would like to donate");
+	public DonateMovieGUI(LibraryService libraryApp) {
+		JLabel directorNameLabel = new JLabel("Enter the directors name of the movie you would like to donate");
+		JTextField directorNameTextField = new JTextField(30);
+		JLabel titleNameLabel = new JLabel("Enter the title of the movie you would like to donate");
 		JTextField titleNameTextField = new JTextField(30);
-		JButton donateBookButton = new JButton("Add book");
+		JLabel runTimeLabel = new JLabel("Enter the runtime of the movie");
+		JTextField runTimeTextField = new JTextField(30);
+		JButton donateBookButton = new JButton("Add movie");
 
 		this.setSize(400, 200);
 		this.setModal(true);
-		this.setTitle("Donate a Book");
+		this.setTitle("Donate a Movie");
 
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
 		this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 
-		this.add(authorNameLabel);
-		this.add(authorNameTextField);
+		this.add(directorNameLabel);
+		this.add(directorNameTextField);
 		this.add(titleNameLabel);
 		this.add(titleNameTextField);
+		this.add(runTimeLabel);
+		this.add(runTimeTextField);
 		this.add(donateBookButton);
 		this.setLocationRelativeTo(null);
 
 		donateBookButton.addActionListener(event -> {
-			String authorName = authorNameTextField.getText();
+			String directorName = directorNameTextField.getText();
 			String titleName = titleNameTextField.getText();
+			String runTime = runTimeTextField.getText();
 
-			if (libraryApp.addBook(titleName, authorName)) {
+			if (libraryApp.addMovie(titleName, directorName, runTime)) {
 				JOptionPane.showMessageDialog(this, "Thank you for your donation!");
 			} else {
 				JOptionPane.showMessageDialog(this, "Please check your author name and title.");

@@ -9,7 +9,7 @@ public class Media {
 	protected String status;
 	protected String runTime;
 	
-	public Media(String title, String runTime,String status,LocalDate localDate) {
+	public Media(String title, String runTime, String status, LocalDate localDate) {
 		super();
 		this.status = status;
 		this.title = title;
@@ -48,8 +48,4 @@ public class Media {
 	public void setRunTime(String runTime) {
 		this.runTime = runTime;
 	}
-	
-	
-	
-	
 }

@@ -7,6 +7,7 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 import com.grandcircus.library.model.Book;
+import com.grandcircus.library.model.Media;
 import com.grandcircus.library.service.LibraryService;
 
 /**
@@ -18,7 +19,8 @@ public class ReturnBookGUI extends JDialog {
 
 	/**
 	 * Displays the ReturnBookGUI.
-	 * @param libraryApp An instance of the library.
+	 * @param libraryApp An instance of 
+	 * the library.
 	 */
 	public ReturnBookGUI(LibraryService libraryApp) {
 		JComboBox bookList = new JComboBox(libraryApp.getAllBooks().toArray());
@@ -36,7 +38,7 @@ public class ReturnBookGUI extends JDialog {
 		this.setLocationRelativeTo(null);
 
 		returnBookButton.addActionListener(event -> {
-			Book selectedBook = (Book) bookList.getSelectedItem();
+			Media selectedBook = (Media) bookList.getSelectedItem();
 			if (libraryApp.bookReturn(selectedBook)) {
 				JOptionPane.showMessageDialog(this, selectedBook + " Has been successfully returned!");
 			} else {

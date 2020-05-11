@@ -2,9 +2,11 @@ package com.grandcircus.library.service;
 
 import java.time.LocalDate;
 import java.util.List;
-import com.grandcircus.library.fileio.BookLineConverter;
+import com.grandcircus.library.fileio.MediaLineConverter;
 import com.grandcircus.library.fileio.FileHelper;
 import com.grandcircus.library.model.Book;
+import com.grandcircus.library.model.Media;
+import com.grandcircus.library.model.Movie;
 
 /**
  * Contains all functionality to run the library.
@@ -13,35 +15,36 @@ public class LibraryService {
 
 	private static final String ALPHA_STRING_REGEX = "[a-zA-z\\s]*";
 	
-	private FileHelper<Book> helper = new FileHelper<>("library.txt", new BookLineConverter());
+	private FileHelper<Media> helper = new FileHelper<>("library.txt", new MediaLineConverter());
 	private LocalDate now = LocalDate.now();
 
 	/**
 	 * Creates a new library service.
 	 */
 	public LibraryService() {
-//		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "Available", now));
-//		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger", "Available", now));
-//		helper.append(new Book("Brave New World", "Aldous Huxley", "Available", now));
-//		helper.append(new Book("Tail of Two Cites", "Charles Dickens", "Available", now));
-//		helper.append(new Book("Pride and Pregudice", "Jane Austen", "Available", now));
-//		helper.append(new Book("From the Earth to the Moon", "Jules Verne", "Available", now));
-//		helper.append(new Book("1984", "George Orwell", "Available", now));
-//		helper.append(new Book("Animal Farm", "George Orwell", "Available", now));
-//		helper.append(new Book("Never Die Alone", "Donald Goines", "Available", now));
-//		helper.append(new Book("The Adventures of Huckleberry Finn", "Mark Twain", "Available", now));
-//		helper.append(new Book("Goosebumps Series", "R. L. Stine", "Available", now));
-//		helper.append(new Book("To Kill a Mockingbird", "Harper Lee", "Available", now));
+		helper.append(new Book("The Great Gatsby", "F. Scott Fitzgerald", "N/A" ,"Available", now));
+		helper.append(new Book("The Catcher in the Rye", "J. D. Salinger","N/A" , "Available", now));
+		helper.append(new Book("Brave New World", "Aldous Huxley","N/A" , "Available", now));
+		helper.append(new Book("Tail of Two Cites", "Charles Dickens","N/A" , "Available", now));
+		helper.append(new Book("Pride and Pregudice", "Jane Austen","N/A" , "Available", now));
+		helper.append(new Book("From the Earth to the Moon", "Jules Verne","N/A" , "Available", now));
+		helper.append(new Book("1984", "George Orwell","N/A" , "Available", now));
+		helper.append(new Book("Animal Farm", "George Orwell","N/A", "Available", now));
+		helper.append(new Book("Never Die Alone", "Donald Goines","N/A" , "Available", now));
+		helper.append(new Book("The Adventures of Huckleberry Finn","Mark Twain","N/A" , "Available", now));
+		helper.append(new Book("Goosebumps Series", "R. L. Stine","N/A" , "Available", now));
+		helper.append(new Book("To Kill a Mockingbird", "Harper Lee","N/A" , "Available", now));
+		helper.append(new Movie("Avatar", "James Cameron", "3hrs","Available", now));
 	}
 
 	/**
 	 * @return All the books that are in the library.
 	 */
 	public String listBooks() {
-		List<Book> allBook = helper.readAll();
+		List<Media> allMedia = helper.readAll();
 		StringBuilder sb = new StringBuilder();
 		
-		for (Book b : allBook) {
+		for (Media b : allMedia) {
 			sb.append(b);
 			sb.append("\n");
 		}
@@ -53,14 +56,22 @@ public class LibraryService {
 	 * @return The book(s) that the given author has written that are in the library.
 	 */
 	public String lookUpByAuthor(String authorName) {
-		List<Book> allBook = helper.readAll();
+		List<Media> allMedia = helper.readAll();
 		StringBuilder sb = new StringBuilder();
 
-		for (Book b : allBook) {
-			if (b.getAuthor().equalsIgnoreCase(authorName)) {
+		for (Media b : allMedia) {
+		if(b instanceof Book) {	
+			if (((Book) b).getAuthor().equalsIgnoreCase(authorName)) {
 				sb.append(b);
 				sb.append("\n");
 			}
+		}	
+		else if(b instanceof Movie) {
+		if (((Movie) b).getDirector().equalsIgnoreCase(authorName)) {
+				sb.append(b);
+				sb.append("\n");
+			}
+		}
 		}
 		return sb.toString();
 	}
@@ -70,10 +81,10 @@ public class LibraryService {
 	 * @return The book that the given title matches in the library.
 	 */
 	public String lookUpByTitle(String titleName) {
-		List<Book> allBook = helper.readAll();
+		List<Media> allBook = helper.readAll();
 		StringBuilder sb = new StringBuilder();
 
-		for (Book b : allBook) {
+		for (Media b : allBook) {
 			if (b.getTitle().equalsIgnoreCase(titleName)) {
 				sb.append(b);
 				sb.append("\n");
@@ -82,18 +93,17 @@ public class LibraryService {
 		return sb.toString();
 	}
 
-	/**
-	 * @param book The book that the user would like  to checkout.
+	/*
+	 * @param selectedBook The book that the user would like checkout.
 	 * @return True if the book was successfully checked out. 
 	 */
-	public boolean checkoutBook(Book book) {
-		List<Book> allBook = helper.readAll();
+	public boolean checkoutBook(Media selectedBook) {
+		List<Media> allBook = helper.readAll();
 		boolean isCheckoutSuccessful = false;
 		
-		for (Book b : allBook) {
-			if (b.getTitle().equalsIgnoreCase(book.getTitle())) {
-				Book userChoice = b;
-				if (userChoice.getStatus().startsWith("A")) {
+		for (Media b : allBook) {
+			if (b.getTitle().equalsIgnoreCase(selectedBook.getTitle())) {
+				if (b.getStatus().startsWith("A")) {
 					b.setStatus("Checked out");
 					b.setLocalDate(b.getLocalDate().plusWeeks(2));
 					isCheckoutSuccessful = true;
@@ -107,17 +117,16 @@ public class LibraryService {
 	
 	/**
 	 * 
-	 * @param book The book that the user would like to return.
+	 * @param selectedBook The book that the user would like to return.
 	 * @return True if the book was successfully returned.
 	 */
-	public boolean bookReturn(Book book) {
-		List<Book> toAllBook = helper.readAll();
+	public boolean bookReturn(Media selectedBook) {
+		List<Media> toAllBook = helper.readAll();
 		boolean isReturnSuccessful = false;
 
-		for (Book b : toAllBook) {
-			if (b.getTitle().equalsIgnoreCase(book.getTitle())) {
-				Book userChoice = b;
-				if (userChoice.getStatus().startsWith("C")) {
+		for (Media b : toAllBook) {
+			if (b.getTitle().equalsIgnoreCase(selectedBook.getTitle())) {
+				if (b.getStatus().startsWith("C")) {
 					b.setStatus("Available");
 					b.setLocalDate(now);
 					isReturnSuccessful = true;
@@ -144,12 +153,12 @@ public class LibraryService {
 			return false;
 		}
 
-		helper.append(new Book(bookTitle, bookAuthor, "Available", now));
+		helper.append(new Book(bookTitle, bookAuthor, " ", "Available", now));
 		
 		return true;
 	}
 
-	public List<Book> getAllBooks() {
+	public List<Media> getAllBooks() {
 		return helper.readAll();
 	}
 }

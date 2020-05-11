@@ -7,6 +7,7 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 import com.grandcircus.library.model.Book;
+import com.grandcircus.library.model.Media;
 import com.grandcircus.library.service.LibraryService;
 
 /**
@@ -36,7 +37,7 @@ public class CheckoutBookGUI extends JDialog {
 		this.setLocationRelativeTo(null);
 
 		checkoutBookButton.addActionListener(event -> {
-			Book selectedBook = (Book) bookList.getSelectedItem();
+			Media selectedBook = (Media) bookList.getSelectedItem();
 			if (libraryApp.checkoutBook(selectedBook)) {
 				JOptionPane.showMessageDialog(this, selectedBook + "  Has been successfully checked out!");
 			} else {

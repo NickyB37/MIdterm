@@ -1,12 +1,13 @@
-The Great Gatsby,F. Scott Fitzgerald,Available,2020-05-11
-The Catcher in the Rye,J. D. Salinger,Available,2020-05-11
-Brave New World,Aldous Huxley,Available,2020-05-11
-Tail of Two Cites,Charles Dickens,Available,2020-05-11
-Pride and Pregudice,Jane Austen,Available,2020-05-11
-From the Earth to the Moon,Jules Verne,Available,2020-05-11
-1984,George Orwell,Available,2020-05-11
-Animal Farm,George Orwell,Available,2020-05-11
-Never Die Alone,Donald Goines,Available,2020-05-11
-The Adventures of Huckleberry Finn,Mark Twain,Available,2020-05-11
-Goosebumps Series,R. L. Stine,Available,2020-05-11
-To Kill a Mockingbird,Harper Lee,Available,2020-05-11
+The Great Gatsby,F. Scott Fitzgerald,N/A,Available,2020-05-11
+The Catcher in the Rye,J. D. Salinger,N/A,Available,2020-05-11
+Brave New World,Aldous Huxley,N/A,Available,2020-05-11
+Tail of Two Cites,Charles Dickens,N/A,Available,2020-05-11
+Pride and Pregudice,Jane Austen,N/A,Available,2020-05-11
+From the Earth to the Moon,Jules Verne,N/A,Available,2020-05-11
+1984,George Orwell,N/A,Available,2020-05-11
+Animal Farm,George Orwell,N/A,Available,2020-05-11
+Never Die Alone,Donald Goines,N/A,Available,2020-05-11
+The Adventures of Huckleberry Finn,Mark Twain,N/A,Available,2020-05-11
+Goosebumps Series,R. L. Stine,N/A,Available,2020-05-11
+To Kill a Mockingbird,Harper Lee,N/A,Available,2020-05-11
+Avatar,James Cameron,3hrs,Checked out,2020-05-25

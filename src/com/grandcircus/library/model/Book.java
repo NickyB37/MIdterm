@@ -5,19 +5,14 @@ import java.time.LocalDate;
 /**
  * Models a library book.
  */
-public class Book {
-	protected String title;
-	protected String author;
-	protected String status;
-	protected LocalDate localDate;
+public class Book extends Media{
 
+protected String author;
 	
-	public Book(String title, String author, String status, LocalDate localDate) {
-		super();
-		this.title = title;
+	public Book(String title, String author,String runTime, String status, LocalDate localDate) {
+		super(title, runTime,status,localDate);
 		this.author = author;
-		this.status = status;
-		this.localDate = localDate;
+
 	}
 	public String getTitle() {
 		return title;
@@ -46,7 +41,7 @@ public class Book {
 	}
 	@Override
 	public String toString() {
-		return String.format("Title: " + title + " Author: " + author + " Status: " + status + " Date: " + localDate.toString());
+		return String.format("Title: " + title + " Author: " + author + "Run Time:" + runTime + " Status: " + status + " Date: " + localDate.toString());
 	}
 	
 	

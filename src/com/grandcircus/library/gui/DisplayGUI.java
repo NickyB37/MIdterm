@@ -7,6 +7,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import com.grandcircus.library.model.Book;
+import com.grandcircus.library.model.Media;
+import com.grandcircus.library.model.Movie;
 import com.grandcircus.library.service.LibraryService;
 
 /**
@@ -38,14 +40,22 @@ public class DisplayGUI extends JDialog {
 	}
 
 	private JScrollPane createBookDataTable(LibraryService libraryApp) {
-		String[] columnNames = { "Title", "Author", "Status", "Date" };
-		List<Book> books = libraryApp.getAllBooks();
+		String[] columnNames = { "Title", "Author/Director","Runtime", "Status", "Date" };
+		
+		List<Media> books = libraryApp.getAllBooks();
 
 		Object[][] bookData = new Object[books.size()][];
 
 		for (int i = 0; i < bookData.length; i++) {
-			Book book = books.get(i);
-			bookData[i] = new Object[] { book.getTitle(), book.getAuthor(), book.getStatus(), book.getLocalDate() };
+
+			Media media = books.get(i);
+			if (media instanceof Book) {
+				bookData[i] = new Object[] { media.getTitle(), ((Book) media).getAuthor(), media.getRunTime(),media.getStatus(),
+						media.getLocalDate() };
+			} else {
+				bookData[i] = new Object[] { media.getTitle(),((Movie) media).getDirector(),
+						media.getRunTime(),media.getStatus(),media.getLocalDate().toString() };
+			}
 		}
 
 		JTable table = new JTable(bookData, columnNames);

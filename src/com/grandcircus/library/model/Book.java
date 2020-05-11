@@ -17,7 +17,7 @@ public class Book {
 		this.title = title;
 		this.author = author;
 		this.status = status;
-		this.localDate = localDate ;
+		this.localDate = localDate;
 	}
 	public String getTitle() {
 		return title;

@@ -83,7 +83,7 @@ public class LibraryService {
 	}
 
 	/**
-	 * @param book The book that the user would like checkout.
+	 * @param book The book that the user would like  to checkout.
 	 * @return True if the book was successfully checked out. 
 	 */
 	public boolean checkoutBook(Book book) {

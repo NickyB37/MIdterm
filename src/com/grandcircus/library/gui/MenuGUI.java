@@ -41,7 +41,6 @@ public class MenuGUI extends JFrame {
 		JButton donateBook = new JButton("Donate a book");
 		JButton exit = new JButton("Exit");
 
-		// 0 in the parameter means unlimited rows
 		this.setLayout(new GridLayout(7, 1));
 
 		this.add(display);
